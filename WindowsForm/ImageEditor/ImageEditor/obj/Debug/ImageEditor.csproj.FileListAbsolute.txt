@@ -1,0 +1,71 @@
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.mainForm.resources
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
+C:\Users\irine\OneDrive\Área de Trabalho\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+E:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+E:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+E:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.SuggestedBindingRedirects.cache
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+E:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
+F:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+F:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+F:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.SuggestedBindingRedirects.cache
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+F:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
+D:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+D:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+D:\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.SuggestedBindingRedirects.cache
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+D:\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+E:\Novo ESSE\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
