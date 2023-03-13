@@ -28,26 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxGray = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.chartLuminance = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBinarization = new System.Windows.Forms.Button();
+            this.chartLuminance = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBinarizar = new System.Windows.Forms.TextBox();
+            this.btnBinarizar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGray)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -112,8 +116,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.09287F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.64579F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(188, 463);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
@@ -129,50 +133,86 @@
             this.label1.Text = "Histograma";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // chartLuminance
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartLuminance.ChartAreas.Add(chartArea1);
-            this.chartLuminance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartLuminance.Legends.Add(legend1);
-            this.chartLuminance.Location = new System.Drawing.Point(3, 478);
-            this.chartLuminance.Name = "chartLuminance";
-            this.chartLuminance.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Escala de Cinza";
-            this.chartLuminance.Series.Add(series1);
-            this.chartLuminance.Size = new System.Drawing.Size(974, 215);
-            this.chartLuminance.TabIndex = 1;
-            title1.Name = "Title1";
-            this.chartLuminance.Titles.Add(title1);
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.btnBinarization, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 157);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(182, 148);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.7027F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2973F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(182, 174);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // btnBinarization
             // 
             this.btnBinarization.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBinarization.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBinarization.Location = new System.Drawing.Point(37, 11);
+            this.btnBinarization.Location = new System.Drawing.Point(37, 20);
             this.btnBinarization.Name = "btnBinarization";
             this.btnBinarization.Size = new System.Drawing.Size(107, 51);
             this.btnBinarization.TabIndex = 0;
             this.btnBinarization.Text = "Binarização ";
             this.btnBinarization.UseVisualStyleBackColor = true;
             this.btnBinarization.Click += new System.EventHandler(this.btnBinarization_Click);
+            // 
+            // chartLuminance
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartLuminance.ChartAreas.Add(chartArea2);
+            this.chartLuminance.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chartLuminance.Legends.Add(legend2);
+            this.chartLuminance.Location = new System.Drawing.Point(3, 478);
+            this.chartLuminance.Name = "chartLuminance";
+            this.chartLuminance.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Escala de Cinza";
+            this.chartLuminance.Series.Add(series2);
+            this.chartLuminance.Size = new System.Drawing.Size(974, 215);
+            this.chartLuminance.TabIndex = 1;
+            title2.Name = "Title1";
+            this.chartLuminance.Titles.Add(title2);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.textBinarizar, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnBinarizar, 0, 1);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 94);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(176, 77);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // textBinarizar
+            // 
+            this.textBinarizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBinarizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBinarizar.Location = new System.Drawing.Point(3, 6);
+            this.textBinarizar.Name = "textBinarizar";
+            this.textBinarizar.Size = new System.Drawing.Size(170, 26);
+            this.textBinarizar.TabIndex = 0;
+            // 
+            // btnBinarizar
+            // 
+            this.btnBinarizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBinarizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBinarizar.Location = new System.Drawing.Point(3, 41);
+            this.btnBinarizar.Name = "btnBinarizar";
+            this.btnBinarizar.Size = new System.Drawing.Size(170, 33);
+            this.btnBinarizar.TabIndex = 1;
+            this.btnBinarizar.Text = "Binarizar";
+            this.btnBinarizar.UseVisualStyleBackColor = true;
+            this.btnBinarizar.Click += new System.EventHandler(this.btnBinarizar_Click);
             // 
             // GrayForm
             // 
@@ -190,8 +230,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGray)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +249,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLuminance;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnBinarization;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TextBox textBinarizar;
+        private System.Windows.Forms.Button btnBinarizar;
     }
 }

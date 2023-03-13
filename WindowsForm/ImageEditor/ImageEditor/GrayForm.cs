@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,17 @@ namespace ImageEditor
 
             this._image = MyImageConverter.Binarization_DMA(this._image, posBiggerGray);
             pictureBoxGray.Image = this._image;
+
+        }
+
+        private void btnBinarizar_Click(object sender, EventArgs e)
+        {
+            int cutGray;
+            if (int.TryParse(textBinarizar.Text, out cutGray))
+            {
+                this._image = MyImageConverter.Binarization_DMA(this._image, cutGray);
+                pictureBoxGray.Image = this._image;
+            }
 
         }
     }
