@@ -17,28 +17,18 @@ namespace EditorGrafico.utils
             double x, y;
             double deltaX, deltaY, m;
 
-            // --> ASSIM FUNCIONA
-            double tempX, tempY;
-            if (x2 < x1)
-            {
-                tempX = x1;
-                tempY = y1;
-                x1 = x2;
-                y1 = y2;
-                x2 = tempX;
-                y2 = tempY;
-            }
-
+           
             deltaX = x2 - x1;
             deltaY = y2 - y1;
             m = deltaY / deltaX;
-            inc = Math.Sign(deltaX);
+            
 
 
             if (y1 > y2) 
             {
                 if (deltaX < deltaY) 
                 {
+                    inc = Math.Sign(deltaY);
                     for (y = y1; y != y2; y += inc)
                     {
                         x = x1 + (y - y1) / m;
@@ -47,6 +37,7 @@ namespace EditorGrafico.utils
                 }
                 else 
                 {
+                    inc = Math.Sign(deltaX);
                     for (x = x1; x != x2; x += inc)
                     {
                         y = y1 + m * (x - x1);
@@ -58,6 +49,7 @@ namespace EditorGrafico.utils
             {
                 if (deltaX < deltaY)
                 {
+                    inc = Math.Sign(deltaY);
                     for (y = y1; y != y2; y += inc)
                     {
                         x = x1 + (y - y1) / m;
@@ -66,7 +58,7 @@ namespace EditorGrafico.utils
                 }
                 else 
                 {
-                   
+                    inc = Math.Sign(deltaX);
                     for (x = x1; x != x2; x += inc)
                     {
                         y = y1 + m * (x - x1);
