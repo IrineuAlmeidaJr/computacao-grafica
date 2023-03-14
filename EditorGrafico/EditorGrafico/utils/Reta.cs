@@ -17,14 +17,27 @@ namespace EditorGrafico.utils
             double x, y;
             double deltaX, deltaY, m;
 
+            // --> ASSIM FUNCIONA
+            double tempX, tempY;
+            if (x2 < x1)
+            {
+                tempX = x1;
+                tempY = y1;
+                x1 = x2;
+                y1 = y2;
+                x2 = tempX;
+                y2 = tempY;
+            }
+
             deltaX = x2 - x1;
             deltaY = y2 - y1;
             m = deltaY / deltaX;
             inc = Math.Sign(deltaX);
 
-            if (y1 > y2) // 7° e 8° octante
+
+            if (y1 > y2) 
             {
-                if (deltaX < deltaY) // 7° octante
+                if (deltaX < deltaY) 
                 {
                     for (y = y1; y != y2; y += inc)
                     {
@@ -32,7 +45,7 @@ namespace EditorGrafico.utils
                         graphics.FillRectangle(Brushes.Red, (int)x, (int)y, 6, 6);
                     }
                 }
-                else // deltaX > deltaY -> 8° octante 
+                else 
                 {
                     for (x = x1; x != x2; x += inc)
                     {
@@ -41,9 +54,9 @@ namespace EditorGrafico.utils
                     }
                 }
             }
-            else // y2 > y1 -> 1° e 2° octante
+            else
             {
-                if (deltaX < deltaY) // 2° octante
+                if (deltaX < deltaY)
                 {
                     for (y = y1; y != y2; y += inc)
                     {
@@ -51,9 +64,9 @@ namespace EditorGrafico.utils
                         graphics.FillRectangle(Brushes.Red, (int)x, (int)y, 6, 6);
                     }
                 }
-                else // deltaX > deltaY -> 1° octante 
+                else 
                 {
-                    // Acjo que aqui x++ se positivo se ngativo delta x--
+                   
                     for (x = x1; x != x2; x += inc)
                     {
                         y = y1 + m * (x - x1);
@@ -141,13 +154,8 @@ namespace EditorGrafico.utils
 
             if (Math.Abs(deltaY) > Math.Abs(deltaX))
             {
-                tempX = x1;
-                x1 = y1;
-                y1 = tempX;
-
-                tempX = x2;
-                x2 = y2;
-                y2 = tempX;
+                PontoMedio(y1, x1, y2, x2, imagem);
+                return;
             }
 
 

@@ -35,24 +35,35 @@ namespace EditorGrafico
 
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            bool escolhido = true;
             x2 = e.X;
             y2 = e.Y;
 
-            if (escolhido && cbReta1.Checked)
+            // ---> RETA
+            if (rbReta1.Checked)
             {
                 Reta.EquacaoRealReta(x1, y1, x2, y2, _imagem);
-                escolhido = false;
             }
-            if (escolhido && cbReta2.Checked)
+            if (rbReta2.Checked)
             {
                 Reta.DigitalDifferentialAnalyzer(x1, y1, x2, y2, _imagem);
-                escolhido = false;
             }
-            if (escolhido && cbReta3.Checked)
+            if (rbReta3.Checked)
             {
                 Reta.PontoMedio(x1, y1, x2, y2, _imagem);
-                escolhido= false;
+            }
+
+            // ---> CIRCUNFERÊNCIA
+            if (rbCircunferencia1.Checked)
+            {
+
+            }
+            if (rbCircunferencia2.Checked) 
+            {
+
+            }
+            if (rbCircunferencia3.Checked)
+            {
+
             }
 
 
