@@ -1,0 +1,11 @@
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\bin\Debug\EditorGrafico.exe.config
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\bin\Debug\EditorGrafico.exe
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\bin\Debug\EditorGrafico.pdb
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.AssemblyReference.cache
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.FormPrincipal.resources
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.Properties.Resources.resources
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.GenerateResource.cache
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.CoreCompileInputs.cache
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.exe
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.pdb
