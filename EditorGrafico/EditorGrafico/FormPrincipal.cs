@@ -14,11 +14,13 @@ namespace EditorGrafico
     public partial class FormPrincipal : Form
     {
         double x1, x2, y1, y2;
-        private Bitmap _imagem;
+        private Bitmap _imagem;               
 
         public FormPrincipal()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
             int w = pictureBox.Height;
             int h = pictureBox.Width;
             _imagem = 
@@ -38,36 +40,50 @@ namespace EditorGrafico
             x2 = e.X;
             y2 = e.Y;
 
-            // ---> RETA
-            if (rbReta1.Checked)
+            if (x2 >= 0 && x2 <= _imagem.Width && y2 >=0 && y2 <= _imagem.Height)
             {
-                Reta.EquacaoRealReta(x1, y1, x2, y2, _imagem);
-            }
-            if (rbReta2.Checked)
-            {
-                Reta.DigitalDifferentialAnalyzer(x1, y1, x2, y2, _imagem);
-            }
-            if (rbReta3.Checked)
-            {
-                Reta.PontoMedio(x1, y1, x2, y2, _imagem);
-            }
+                // ---> RETA
+                if (rbReta1.Checked)
+                {
+                    Reta.EquacaoRealReta(x1, y1, x2, y2, _imagem);
+                }
+                if (rbReta2.Checked)
+                {
+                    Reta.DigitalDifferentialAnalyzer(x1, y1, x2, y2, _imagem);
+                }
+                if (rbReta3.Checked)
+                {
+                    Reta.PontoMedio(x1, y1, x2, y2, _imagem);
+                }
 
-            // ---> CIRCUNFERÊNCIA
-            if (rbCircunferencia1.Checked)
-            {
+                // ---> CIRCUNFERÊNCIA
+                if (rbCircunferencia1.Checked)
+                {                    
+                    Circunferencia.circEquacaoReal(x1, y1, x2, y2, _imagem);
+                }
+                if (rbCircunferencia2.Checked)
+                {
 
-            }
-            if (rbCircunferencia2.Checked) 
-            {
+                }
+                if (rbCircunferencia3.Checked)
+                {
 
-            }
-            if (rbCircunferencia3.Checked)
-            {
-
-            }
+                }
 
 
-            pictureBox.Image = _imagem;
+
+
+
+
+                pictureBox.Image = _imagem;
+            }      
+            
+        }
+
+        private void btnPoligonal_Click(object sender, EventArgs e)
+        {
+            var formPolinomial = new FormPoligonal();
+            formPolinomial.ShowDialog();
         }
     }
 }
