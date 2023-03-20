@@ -38,5 +38,28 @@ namespace EditorGrafico.utils
         }
 
 
+        public static void circEquacaoTrig(double cx, double cy, double x2, double y2, Bitmap imagem)
+        {
+            double raio = Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2));
+            double y;
+
+            double trigX, trigY, alpha;
+
+            for (int x = 0; x < raio / Math.Sqrt(2); x++)
+            {
+                //y = Math.Sqrt(Math.Pow(raio, 2) - Math.Pow(x, 2));
+
+                alpha = (Math.PI / 180) * x; // transforma grau para radiano
+
+                trigX = raio * Math.Cos(alpha);
+                trigY = raio * Math.Sin(alpha);
+
+                //simetria((int)cx, (int)cy, (int)x, (int)y, imagem);
+                simetria((int)cx, (int)cy, (int)trigX, (int)trigY, imagem);
+            }
+
+        }
+
+
     }
 }

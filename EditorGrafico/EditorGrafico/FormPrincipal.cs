@@ -63,7 +63,7 @@ namespace EditorGrafico
                 }
                 if (rbCircunferencia2.Checked)
                 {
-
+                    Circunferencia.circEquacaoTrig(x1, y1, x2, y2, _imagem);
                 }
                 if (rbCircunferencia3.Checked)
                 {
