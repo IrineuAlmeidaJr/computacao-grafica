@@ -21,3 +21,4 @@ D:\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj
 D:\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.exe
 D:\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.pdb
 D:\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.FormPoligonal.resources
+D:\GitHub\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.FormPoligonal.resources

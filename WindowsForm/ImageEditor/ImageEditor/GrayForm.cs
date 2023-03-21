@@ -44,6 +44,8 @@ namespace ImageEditor
             int height = this._image.Height;
             int pixelSize = 3;
 
+
+
             //lock dados bitmap 
             BitmapData bitmapDataSrc = this._image.LockBits(new Rectangle(0, 0, width, height),
                ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);

@@ -59,11 +59,11 @@ namespace EditorGrafico
                 // ---> CIRCUNFERÊNCIA
                 if (rbCircunferencia1.Checked)
                 {                    
-                    Circunferencia.circEquacaoReal(x1, y1, x2, y2, _imagem);
+                    Circunferencia.EquacaoReal(x1, y1, x2, y2, _imagem);
                 }
                 if (rbCircunferencia2.Checked)
                 {
-
+                    Circunferencia.EquacaoTrig(x1, y1, x2, y2, _imagem);
                 }
                 if (rbCircunferencia3.Checked)
                 {
