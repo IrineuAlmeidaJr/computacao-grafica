@@ -37,8 +37,6 @@ namespace EditorGrafico.utils
                 trigX = raio * Math.Cos(alpha);
                 trigY = raio * Math.Sin(alpha);
 
-                // 
-
                 //simetria((int)cx, (int)cy, (int)x, (int)y, imagem);
                 Simetria((int)cx, (int)cy, (int)trigX, (int)trigY, imagem);
             }
