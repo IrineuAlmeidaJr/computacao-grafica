@@ -69,3 +69,15 @@ C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\ob
 C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
 C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
 C:\Users\irine\OneDrive\Área de Trabalho\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.AssemblyReference.cache
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.GrayForm.resources
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.cache
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.CoreCompileInputs.cache
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+D:\GitHub\computacao-grafica\WindowsForm\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb

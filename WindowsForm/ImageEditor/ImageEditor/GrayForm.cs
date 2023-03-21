@@ -23,7 +23,7 @@ namespace ImageEditor
     public partial class GrayForm : Form
     {
         private Bitmap _image;
-        private int[] _shadesGray;
+        private int[] _histograma;
         public GrayForm(Bitmap image)
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace ImageEditor
             {
                 this._image = image;
                 pictureBoxGray.Image = this._image;
-                this._shadesGray = new int[256];
+                this._histograma = new int[256];
 
                 MakeBarGraph();
             }
@@ -65,7 +65,7 @@ namespace ImageEditor
                         b = *(src++);
                         g = *(src++);
                         r = *(src++);
-                        this._shadesGray[r]++;
+                        this._histograma[r]++;
                     }
                     // Ao terminar a linha pula a parte que estaria o padding da imagem, por isso tem que
                     // fazer dois for
@@ -77,9 +77,9 @@ namespace ImageEditor
             this._image.UnlockBits(bitmapDataSrc);
 
 
-            for (int i = 0; i < this._shadesGray.Length; i++)
+            for (int i = 0; i < this._histograma.Length; i++)
             {
-                chartLuminance.Series["Escala de Cinza"].Points.AddXY(i, this._shadesGray[i]);
+                chartLuminance.Series["Escala de Cinza"].Points.AddXY(i, this._histograma[i]);
             }
             
         }
@@ -88,14 +88,14 @@ namespace ImageEditor
         {
             
             // Achar maior ocorrência de Pixel Cinza
-            int biggerGray = this._shadesGray[0];
+            int biggerGray = this._histograma[0];
             int posBiggerGray = 0;
             int pos = 1;
-            while(pos < this._shadesGray.Length)
+            while(pos < this._histograma.Length)
             {
-                if (this._shadesGray[pos] > biggerGray)
+                if (this._histograma[pos] > biggerGray)
                 {
-                    biggerGray = this._shadesGray[pos];
+                    biggerGray = this._histograma[pos];
                     posBiggerGray = pos;
                 }
                 pos++;
@@ -113,10 +113,18 @@ namespace ImageEditor
             int cutGray;
             if (int.TryParse(textBinarizar.Text, out cutGray))
             {
-                this._image = MyImageConverter.Binarization_DMA(this._image, cutGray);
+                //this._image = MyImageConverter.Binarization_DMA(this._image, cutGray);
+                this._image = MyImageConverter.OtsuThreshold(this._image, _histograma);
                 pictureBoxGray.Image = this._image;
             }
 
+        }
+
+        private void btnEqualizacao_Click(object sender, EventArgs e)
+        {
+            this._image = MyImageConverter.equalizarImagem(this._image, _histograma);
+            pictureBoxGray.Image = this._image;
+            MakeBarGraph();
         }
     }
 }

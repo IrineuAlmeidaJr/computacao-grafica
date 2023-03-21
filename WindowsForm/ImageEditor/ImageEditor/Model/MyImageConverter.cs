@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -300,7 +301,7 @@ namespace ImageEditor.Model
             //lock dados bitmap destino
             BitmapData bitmapDataDst = newImageBinary.LockBits(new Rectangle(0, 0, width, height),
                 ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-            
+
             int padding = bitmapDataSrc.Stride - (width * pixelSize);
 
             unsafe
@@ -465,7 +466,7 @@ namespace ImageEditor.Model
                         if (intensity > 0)
                         {
                             hsi[2] = intensity;
-                        } 
+                        }
                         else
                         {
                             hsi[2] = 0;
@@ -635,5 +636,148 @@ namespace ImageEditor.Model
 
             return newImage;
         }
+
+        public static Bitmap OtsuThreshold(Bitmap bitmap, int[] histogram)
+        {
+            int[] TresholdValue = new int[255];
+            int temp = 0, temp2 = 0, temp3 = 0, temp4 = 0, temp5 = 0, temp6 = 0;
+            int size = (bitmap.Height * bitmap.Width);
+
+            int BWeight = 0, BMean = 0, BVariance = 0;
+            int FWeight = 0, FMean = 0, FVariance = 0;
+
+            int[] T = new int[256];
+            int ClassVariance = 0;
+
+            for (int i = 0; i < 256; i++)
+            {
+                temp = temp + histogram[i];
+                BWeight = temp / size;
+
+                temp2 = temp2 + (i * histogram[i]);
+                if (temp == 0) { temp = 1; }
+
+                BMean = temp2 / temp;
+
+                temp3 = temp3 + ((int)Math.Sqrt(i - BMean) * histogram[i]);
+                BVariance = temp3 / temp;
+
+
+                for (int j = i + 1; j < 256; j++)
+                {
+                    temp4 = temp4 + histogram[j];
+                    FWeight = temp4 / size;
+
+                    temp5 = temp5 + (j * histogram[j]);
+                    if (temp4 == 0) temp4 = 1;
+                    FMean = temp5 / temp4;
+
+                    temp6 = temp6 + ((int)Math.Sqrt(j - FMean) * histogram[j]);
+                    FVariance = temp6 / temp4;
+                }
+
+                ClassVariance = (BWeight * BVariance + FWeight * FVariance);
+
+                T[i] = ClassVariance;
+            }
+
+            int MinNumber = T[44], a = 0;
+
+            for (int b = 1; b < 255; b++)
+            {
+                if (T[b] < MinNumber)
+                {
+                    MinNumber = T[b];
+                    a = b;
+                }
+            }
+
+            Bitmap bitmap2 = new Bitmap(bitmap.Height, bitmap.Width);
+            int Threshold = 0;
+
+            for (int i = 0; i < bitmap2.Height; i++)
+            {
+                for (int j = 0; j < bitmap2.Width; j++)
+                {
+                    Color c1 = bitmap.GetPixel(i, j);
+                    if (c1.B > a) { Threshold = 255; }
+                    else { Threshold = 0; }
+                    bitmap2.SetPixel(i, j, Color.FromArgb(Threshold, Threshold, Threshold));
+                }
+            }
+            return bitmap2;
+        }
+
+
+        private static int maiorValor(int[] hist)
+        {
+            for (int i = (hist.Length - 1); i >= 0; i--)
+            {
+                if (hist[i] != 0)
+                    return i;
+            }
+            return 0;
+        }
+
+        private static void calcularHistograma(Bitmap img, int[] histograma)
+        {
+            Color pixel;
+            int posTom;
+            histograma = new int[256];
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 0; y < img.Height; y++)
+                {
+                    pixel = img.GetPixel(x, y);
+                    posTom = pixel.R;
+                    histograma[posTom]++;
+                }
+            }
+        }
+
+
+        public static Bitmap equalizarImagem(Bitmap imagem, int[] histograma)
+        {
+            Color pixel;
+            int posTom, novoTom;
+            float[] histogramaAcumulado = new float[256];
+
+            calcularHistograma(imagem, histograma);
+
+            //Calcula histograma acumulado
+            float aux = histogramaAcumulado[0];
+            for (int i = 1; i < histograma.Length; i++)
+            {
+                if (histograma[i] != 0)
+                {
+                    histogramaAcumulado[i] = (aux + ((float)histograma[i] / (imagem.Width * imagem.Height)));
+                    aux = histogramaAcumulado[i];
+                }
+            }
+
+            //Calcula mapa de cores
+            int[] mapaCores = new int[256];
+            int maior = maiorValor(histograma);
+            for (int i = 0; i < histograma.Length; i++)
+                mapaCores[i] = (int)(Math.Round(histogramaAcumulado[i] * maior));
+
+
+
+            //Equalizando imagem
+            Bitmap tempImg = new Bitmap(imagem.Width, imagem.Height);
+            for (int m = 0; m < imagem.Width; m++)
+            {
+                for (int n = 0; n < imagem.Height; n++)
+                {
+                    pixel = imagem.GetPixel(m, n);
+                    posTom = pixel.R;
+                    novoTom = mapaCores[posTom];
+                    tempImg.SetPixel(m, n, Color.FromArgb(novoTom, novoTom, novoTom));
+                }
+            }
+            return tempImg;
+        }     
+            
+         
     }
 }

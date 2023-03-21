@@ -24,7 +24,10 @@ namespace EditorGrafico.utils
 
         private static void simetria(int cx, int cy, int x, int y, Bitmap imagem)
         {
+            int w = imagem.Width;
+            int h = imagem.Height;
             // Um if para cada um para verificar os limites
+            int tempX, tempY;
             imagem.SetPixel(cx + x, cy + y, Color.Red);
             imagem.SetPixel(cx + y, cy + x, Color.Red);
             imagem.SetPixel(cx + x, cy - y, Color.Red);

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,18 +40,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBinarization = new System.Windows.Forms.Button();
-            this.chartLuminance = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.textBinarizar = new System.Windows.Forms.TextBox();
             this.btnBinarizar = new System.Windows.Forms.Button();
+            this.chartLuminance = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnEqualizacao = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGray)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -109,6 +110,7 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.btnEqualizacao, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -160,25 +162,6 @@
             this.btnBinarization.UseVisualStyleBackColor = true;
             this.btnBinarization.Click += new System.EventHandler(this.btnBinarization_Click);
             // 
-            // chartLuminance
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartLuminance.ChartAreas.Add(chartArea2);
-            this.chartLuminance.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartLuminance.Legends.Add(legend2);
-            this.chartLuminance.Location = new System.Drawing.Point(3, 478);
-            this.chartLuminance.Name = "chartLuminance";
-            this.chartLuminance.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Escala de Cinza";
-            this.chartLuminance.Series.Add(series2);
-            this.chartLuminance.Size = new System.Drawing.Size(974, 215);
-            this.chartLuminance.TabIndex = 1;
-            title2.Name = "Title1";
-            this.chartLuminance.Titles.Add(title2);
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -214,6 +197,37 @@
             this.btnBinarizar.UseVisualStyleBackColor = true;
             this.btnBinarizar.Click += new System.EventHandler(this.btnBinarizar_Click);
             // 
+            // chartLuminance
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartLuminance.ChartAreas.Add(chartArea1);
+            this.chartLuminance.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chartLuminance.Legends.Add(legend1);
+            this.chartLuminance.Location = new System.Drawing.Point(3, 478);
+            this.chartLuminance.Name = "chartLuminance";
+            this.chartLuminance.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Escala de Cinza";
+            this.chartLuminance.Series.Add(series1);
+            this.chartLuminance.Size = new System.Drawing.Size(974, 215);
+            this.chartLuminance.TabIndex = 1;
+            title1.Name = "Title1";
+            this.chartLuminance.Titles.Add(title1);
+            // 
+            // btnEqualizacao
+            // 
+            this.btnEqualizacao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEqualizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEqualizacao.Location = new System.Drawing.Point(3, 337);
+            this.btnEqualizacao.Name = "btnEqualizacao";
+            this.btnEqualizacao.Size = new System.Drawing.Size(182, 123);
+            this.btnEqualizacao.TabIndex = 2;
+            this.btnEqualizacao.Text = "Equalização";
+            this.btnEqualizacao.UseVisualStyleBackColor = true;
+            this.btnEqualizacao.Click += new System.EventHandler(this.btnEqualizacao_Click);
+            // 
             // GrayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,9 +245,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLuminance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +266,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox textBinarizar;
         private System.Windows.Forms.Button btnBinarizar;
+        private System.Windows.Forms.Button btnEqualizacao;
     }
 }
