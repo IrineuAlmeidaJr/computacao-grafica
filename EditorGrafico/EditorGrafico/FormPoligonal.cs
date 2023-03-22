@@ -30,10 +30,10 @@ namespace EditorGrafico
             this.pontosPoligono = new List<Ponto>();
             this.listaPoligonos = new List<Poligono>();
 
-            LimparTela();
+            CarregarTela();
         }
 
-        private void LimparTela()
+        private void CarregarTela()
         {
             int w = pictureBoxPoligono.Height;
             int h = pictureBoxPoligono.Width;
@@ -41,6 +41,11 @@ namespace EditorGrafico
                 new Bitmap(h, w, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
             Graphics graphics = Graphics.FromImage(_imagem);
             pictureBoxPoligono.Image = _imagem;
+
+            foreach (var poligono in listaPoligonos)
+            {
+                poligono.DesenharPoligono(_imagem, pictureBoxPoligono);
+            }
         }
 
         private int PoligonoSelecionado()
@@ -109,12 +114,7 @@ namespace EditorGrafico
                 listaPoligonos.RemoveAt(posExcluir);
                 listBox.Items.RemoveAt(posExcluir);
 
-                LimparTela();
-
-                foreach (var poligono in listaPoligonos)
-                {
-                    poligono.DesenharPoligono(_imagem, pictureBoxPoligono);
-                }
+                CarregarTela();                
             }
         }
 
@@ -159,20 +159,9 @@ namespace EditorGrafico
                     int dY = Convert.ToInt32(tbTranslacaoY.Text);
 
                     Poligono poligono = this.listaPoligonos[pos];
-                    foreach (var ponto in poligono.Pontos)
-                    {
-                        ponto.X += dX;
-                        ponto.Y += dY;
-                    }
+                    poligono.Translacao(dX, dY);
 
-                    LimparTela();
-
-                    foreach (var tempPoligono in listaPoligonos)
-                    {
-                        tempPoligono.DesenharPoligono(_imagem, pictureBoxPoligono);
-                    }
-
-
+                    CarregarTela();
                 }
                 catch (FormatException)
                 {

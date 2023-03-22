@@ -33,6 +33,15 @@ namespace EditorGrafico.models
             }
 
         }
+
+        public void Translacao(int dX, int dY)
+        {
+            foreach (var ponto in Pontos)
+            {
+                ponto.X += dX;
+                ponto.Y += dY;
+            }
+        }
        
 
     }
