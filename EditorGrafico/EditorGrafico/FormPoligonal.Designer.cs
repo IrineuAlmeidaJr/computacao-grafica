@@ -37,41 +37,42 @@
             this.listBox = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnPreencherPoligono = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbCentro = new System.Windows.Forms.RadioButton();
             this.rbOrigem = new System.Windows.Forms.RadioButton();
             this.rbCoordenada = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.txCordX = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txCordY = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.labelRot = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tbRotacao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRotacao = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.tbTranslacaoX = new System.Windows.Forms.TextBox();
             this.tbTranslacaoY = new System.Windows.Forms.TextBox();
             this.btnTranslacao = new System.Windows.Forms.Button();
-            this.btnRotacao = new System.Windows.Forms.Button();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEscala = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tbEscalaX = new System.Windows.Forms.TextBox();
             this.tbEscalaY = new System.Windows.Forms.TextBox();
-            this.btnEscala = new System.Windows.Forms.Button();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbCesilhamentoX = new System.Windows.Forms.TextBox();
-            this.tbCesilhamentoY = new System.Windows.Forms.TextBox();
             this.btnCisalhamento = new System.Windows.Forms.Button();
+            this.tbCesilhamentoY = new System.Windows.Forms.TextBox();
+            this.tbCesilhamentoX = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnEspalhamentoXY = new System.Windows.Forms.Button();
-            this.btnEspalhamentoX = new System.Windows.Forms.Button();
             this.btnEspalhamentoY = new System.Windows.Forms.Button();
+            this.btnEspalhamentoX = new System.Windows.Forms.Button();
+            this.btnEspalhamentoXY = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoligono)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -144,7 +145,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.80303F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.19697F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(288, 201);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(288, 200);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label1
@@ -173,8 +174,8 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.08057F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(282, 160);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(282, 159);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // listBox
@@ -184,14 +185,16 @@
             this.listBox.FormattingEnabled = true;
             this.listBox.Location = new System.Drawing.Point(3, 3);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(173, 154);
+            this.listBox.Size = new System.Drawing.Size(173, 153);
             this.listBox.TabIndex = 0;
+            this.listBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listBox_ItemCheck);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.btnExcluir, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnPreencherPoligono, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(182, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -199,7 +202,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(97, 154);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(97, 153);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // btnExcluir
@@ -214,6 +217,16 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // btnPreencherPoligono
+            // 
+            this.btnPreencherPoligono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreencherPoligono.Location = new System.Drawing.Point(3, 54);
+            this.btnPreencherPoligono.Name = "btnPreencherPoligono";
+            this.btnPreencherPoligono.Size = new System.Drawing.Size(91, 32);
+            this.btnPreencherPoligono.TabIndex = 4;
+            this.btnPreencherPoligono.Text = "Preencher";
+            this.btnPreencherPoligono.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -225,7 +238,7 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel14, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel15, 0, 5);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 210);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 209);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 6;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.30817F));
@@ -234,7 +247,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.6153F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.6153F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.6153F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(288, 417);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(288, 418);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -242,7 +255,7 @@
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.radioButton1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.rbCentro, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.rbOrigem, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.rbCoordenada, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 1, 2);
@@ -253,21 +266,21 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(282, 109);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(282, 110);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // radioButton1
+            // rbCentro
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(135, 30);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ao centro";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbCentro.AutoSize = true;
+            this.rbCentro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbCentro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCentro.Location = new System.Drawing.Point(3, 3);
+            this.rbCentro.Name = "rbCentro";
+            this.rbCentro.Size = new System.Drawing.Size(135, 30);
+            this.rbCentro.TabIndex = 0;
+            this.rbCentro.TabStop = true;
+            this.rbCentro.Text = "ao centro";
+            this.rbCentro.UseVisualStyleBackColor = true;
             // 
             // rbOrigem
             // 
@@ -289,7 +302,7 @@
             this.rbCoordenada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbCoordenada.Location = new System.Drawing.Point(3, 75);
             this.rbCoordenada.Name = "rbCoordenada";
-            this.rbCoordenada.Size = new System.Drawing.Size(135, 31);
+            this.rbCoordenada.Size = new System.Drawing.Size(135, 32);
             this.rbCoordenada.TabIndex = 2;
             this.rbCoordenada.TabStop = true;
             this.rbCoordenada.Text = "a coordenada";
@@ -301,7 +314,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.txCordX, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txCordY, 1, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(144, 75);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -319,15 +332,15 @@
             this.txCordX.Text = "X";
             this.txCordX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // txCordY
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(70, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(62, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Y";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txCordY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txCordY.Location = new System.Drawing.Point(70, 3);
+            this.txCordY.Name = "txCordY";
+            this.txCordY.Size = new System.Drawing.Size(62, 22);
+            this.txCordY.TabIndex = 1;
+            this.txCordY.Text = "Y";
+            this.txCordY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel9
             // 
@@ -337,7 +350,7 @@
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.btnRotacao, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 118);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 119);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -403,6 +416,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "º";
             // 
+            // btnRotacao
+            // 
+            this.btnRotacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnRotacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotacao.Location = new System.Drawing.Point(139, 10);
+            this.btnRotacao.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.btnRotacao.Name = "btnRotacao";
+            this.btnRotacao.Size = new System.Drawing.Size(70, 33);
+            this.btnRotacao.TabIndex = 1;
+            this.btnRotacao.Text = "Aplicar";
+            this.btnRotacao.UseVisualStyleBackColor = true;
+            this.btnRotacao.Click += new System.EventHandler(this.btnRotacao_Click);
+            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 4;
@@ -415,7 +441,7 @@
             this.tableLayoutPanel12.Controls.Add(this.tbTranslacaoY, 2, 0);
             this.tableLayoutPanel12.Controls.Add(this.btnTranslacao, 3, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 178);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 179);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -465,18 +491,7 @@
             this.btnTranslacao.TabIndex = 3;
             this.btnTranslacao.Text = "Aplicar";
             this.btnTranslacao.UseVisualStyleBackColor = true;
-            // 
-            // btnRotacao
-            // 
-            this.btnRotacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnRotacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRotacao.Location = new System.Drawing.Point(139, 10);
-            this.btnRotacao.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.btnRotacao.Name = "btnRotacao";
-            this.btnRotacao.Size = new System.Drawing.Size(70, 33);
-            this.btnRotacao.TabIndex = 1;
-            this.btnRotacao.Text = "Aplicar";
-            this.btnRotacao.UseVisualStyleBackColor = true;
+            this.btnTranslacao.Click += new System.EventHandler(this.btnTranslacao_Click);
             // 
             // tableLayoutPanel13
             // 
@@ -490,12 +505,23 @@
             this.tableLayoutPanel13.Controls.Add(this.tbEscalaX, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tbEscalaY, 2, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 238);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 239);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(282, 54);
             this.tableLayoutPanel13.TabIndex = 3;
+            // 
+            // btnEscala
+            // 
+            this.btnEscala.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnEscala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEscala.Location = new System.Drawing.Point(200, 10);
+            this.btnEscala.Name = "btnEscala";
+            this.btnEscala.Size = new System.Drawing.Size(70, 33);
+            this.btnEscala.TabIndex = 4;
+            this.btnEscala.Text = "Aplicar";
+            this.btnEscala.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -530,17 +556,6 @@
             this.tbEscalaY.Text = "Y";
             this.tbEscalaY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnEscala
-            // 
-            this.btnEscala.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnEscala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEscala.Location = new System.Drawing.Point(200, 10);
-            this.btnEscala.Name = "btnEscala";
-            this.btnEscala.Size = new System.Drawing.Size(70, 33);
-            this.btnEscala.TabIndex = 4;
-            this.btnEscala.Text = "Aplicar";
-            this.btnEscala.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.ColumnCount = 4;
@@ -553,34 +568,23 @@
             this.tableLayoutPanel14.Controls.Add(this.tbCesilhamentoX, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 298);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 299);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Size = new System.Drawing.Size(282, 54);
             this.tableLayoutPanel14.TabIndex = 4;
             // 
-            // label5
+            // btnCisalhamento
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cisalhamento";
-            // 
-            // tbCesilhamentoX
-            // 
-            this.tbCesilhamentoX.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCesilhamentoX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCesilhamentoX.Location = new System.Drawing.Point(106, 16);
-            this.tbCesilhamentoX.Name = "tbCesilhamentoX";
-            this.tbCesilhamentoX.Size = new System.Drawing.Size(39, 22);
-            this.tbCesilhamentoX.TabIndex = 2;
-            this.tbCesilhamentoX.Text = "X";
-            this.tbCesilhamentoX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCisalhamento.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnCisalhamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCisalhamento.Location = new System.Drawing.Point(202, 10);
+            this.btnCisalhamento.Name = "btnCisalhamento";
+            this.btnCisalhamento.Size = new System.Drawing.Size(70, 33);
+            this.btnCisalhamento.TabIndex = 5;
+            this.btnCisalhamento.Text = "Aplicar";
+            this.btnCisalhamento.UseVisualStyleBackColor = true;
             // 
             // tbCesilhamentoY
             // 
@@ -593,16 +597,27 @@
             this.tbCesilhamentoY.Text = "Y";
             this.tbCesilhamentoY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnCisalhamento
+            // tbCesilhamentoX
             // 
-            this.btnCisalhamento.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCisalhamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCisalhamento.Location = new System.Drawing.Point(202, 10);
-            this.btnCisalhamento.Name = "btnCisalhamento";
-            this.btnCisalhamento.Size = new System.Drawing.Size(70, 33);
-            this.btnCisalhamento.TabIndex = 5;
-            this.btnCisalhamento.Text = "Aplicar";
-            this.btnCisalhamento.UseVisualStyleBackColor = true;
+            this.tbCesilhamentoX.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbCesilhamentoX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCesilhamentoX.Location = new System.Drawing.Point(106, 16);
+            this.tbCesilhamentoX.Name = "tbCesilhamentoX";
+            this.tbCesilhamentoX.Size = new System.Drawing.Size(39, 22);
+            this.tbCesilhamentoX.TabIndex = 2;
+            this.tbCesilhamentoX.Text = "X";
+            this.tbCesilhamentoX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cisalhamento";
             // 
             // tableLayoutPanel15
             // 
@@ -616,34 +631,23 @@
             this.tableLayoutPanel15.Controls.Add(this.btnEspalhamentoXY, 1, 0);
             this.tableLayoutPanel15.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 358);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 359);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(282, 56);
             this.tableLayoutPanel15.TabIndex = 5;
             // 
-            // label6
+            // btnEspalhamentoY
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Espalhamento";
-            // 
-            // btnEspalhamentoXY
-            // 
-            this.btnEspalhamentoXY.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspalhamentoXY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEspalhamentoXY.Location = new System.Drawing.Point(232, 8);
-            this.btnEspalhamentoXY.Name = "btnEspalhamentoXY";
-            this.btnEspalhamentoXY.Size = new System.Drawing.Size(40, 40);
-            this.btnEspalhamentoXY.TabIndex = 6;
-            this.btnEspalhamentoXY.Text = "XY";
-            this.btnEspalhamentoXY.UseVisualStyleBackColor = true;
+            this.btnEspalhamentoY.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEspalhamentoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEspalhamentoY.Location = new System.Drawing.Point(174, 8);
+            this.btnEspalhamentoY.Name = "btnEspalhamentoY";
+            this.btnEspalhamentoY.Size = new System.Drawing.Size(40, 40);
+            this.btnEspalhamentoY.TabIndex = 8;
+            this.btnEspalhamentoY.Text = "Y";
+            this.btnEspalhamentoY.UseVisualStyleBackColor = true;
             // 
             // btnEspalhamentoX
             // 
@@ -656,16 +660,27 @@
             this.btnEspalhamentoX.Text = "X";
             this.btnEspalhamentoX.UseVisualStyleBackColor = true;
             // 
-            // btnEspalhamentoY
+            // btnEspalhamentoXY
             // 
-            this.btnEspalhamentoY.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspalhamentoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEspalhamentoY.Location = new System.Drawing.Point(174, 8);
-            this.btnEspalhamentoY.Name = "btnEspalhamentoY";
-            this.btnEspalhamentoY.Size = new System.Drawing.Size(40, 40);
-            this.btnEspalhamentoY.TabIndex = 8;
-            this.btnEspalhamentoY.Text = "Y";
-            this.btnEspalhamentoY.UseVisualStyleBackColor = true;
+            this.btnEspalhamentoXY.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEspalhamentoXY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEspalhamentoXY.Location = new System.Drawing.Point(232, 8);
+            this.btnEspalhamentoXY.Name = "btnEspalhamentoXY";
+            this.btnEspalhamentoXY.Size = new System.Drawing.Size(40, 40);
+            this.btnEspalhamentoXY.TabIndex = 6;
+            this.btnEspalhamentoXY.Text = "XY";
+            this.btnEspalhamentoXY.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Espalhamento";
             // 
             // FormPoligonal
             // 
@@ -718,12 +733,12 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbCentro;
         private System.Windows.Forms.RadioButton rbOrigem;
         private System.Windows.Forms.RadioButton rbCoordenada;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TextBox txCordX;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txCordY;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label labelRot;
@@ -751,5 +766,6 @@
         private System.Windows.Forms.Button btnEspalhamentoY;
         private System.Windows.Forms.Button btnEspalhamentoX;
         private System.Windows.Forms.Button btnEspalhamentoXY;
+        private System.Windows.Forms.Button btnPreencherPoligono;
     }
 }

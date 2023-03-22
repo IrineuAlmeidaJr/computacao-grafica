@@ -58,10 +58,11 @@
     <Compile Include="FormPoligonal.Designer.cs">
       <DependentUpon>FormPoligonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\Poligono.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="models\Circunferencia.cs" />
-    <Compile Include="models\Poligono.cs" />
+    <Compile Include="models\Ponto.cs" />
     <Compile Include="models\Reta.cs" />
     <EmbeddedResource Include="FormPoligonal.resx">
       <DependentUpon>FormPoligonal.cs</DependentUpon>

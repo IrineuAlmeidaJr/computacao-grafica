@@ -1,4 +1,5 @@
-﻿using EditorGrafico.utils;
+﻿using EditorGrafico.models;
+using EditorGrafico.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,21 @@ namespace EditorGrafico
 {
     public partial class FormPoligonal : Form
     {
-        private List<Poligono> pontosPoligono;
-        private List<List<Poligono>> poligonos;
+        private int numPoligono;
+
+        private List<Ponto> pontosPoligono;
+        private List<Poligono> listaPoligonos;
+
         private Bitmap _imagem;
 
         public FormPoligonal()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.pontosPoligono = new List<Poligono>();
-            this.poligonos = new List<List<Poligono>>();
+
+            this.numPoligono = 1;
+            this.pontosPoligono = new List<Ponto>();
+            this.listaPoligonos = new List<Poligono>();
 
             LimparTela();
         }
@@ -37,6 +43,33 @@ namespace EditorGrafico
             pictureBoxPoligono.Image = _imagem;
         }
 
+        private int PoligonoSelecionado()
+        {
+            int pos = 0;
+            while (pos < listBox.Items.Count && !listBox.GetItemChecked(pos))
+            {
+                pos++;
+            }
+
+            if (pos < listBox.Items.Count)
+            {
+                return pos;
+            }
+
+            return -1;
+        }
+
+        private void listBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (listBox.CheckedItems.Count >= 1 && e.CurrentValue != CheckState.Checked)
+            {
+                e.NewValue = e.CurrentValue;
+
+                MessageBox.Show("Você pode apenas selecionar um item");
+
+            }
+        }
+
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             int x = e.X;
@@ -48,49 +81,105 @@ namespace EditorGrafico
                 {
                     x = pontosPoligono[0].X;
                     y = pontosPoligono[0].Y;
-                    pontosPoligono.Add(new Poligono(x, y));
+                    pontosPoligono.Add(new Ponto(x, y));                    
 
-                    Poligono.Desenhar(pontosPoligono, _imagem, pictureBoxPoligono);
+                    listaPoligonos.Add(new Poligono(pontosPoligono));
 
-                    poligonos.Add(pontosPoligono);
+                    Poligono poligoAdicionado = listaPoligonos[listaPoligonos.Count - 1];
+                    poligoAdicionado.DesenharPoligono(_imagem, pictureBoxPoligono);
 
-                    listBox.Items.Add($"Poligono_{poligonos.Count}");
+                    listBox.Items.Add($"Poligono {numPoligono++}");
 
-                    this.pontosPoligono = new List<Poligono>();
-                }               
-            } 
+                    this.pontosPoligono = new List<Ponto>();
+                }
+            }
             else
             {
-                pontosPoligono.Add(new Poligono(x, y));
-                Poligono.Desenhar(pontosPoligono, _imagem, pictureBoxPoligono);
+                pontosPoligono.Add(new Ponto(x, y));
+                Ponto.DesenharReta(pontosPoligono, _imagem, pictureBoxPoligono);
             }
-            
+
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            List<int> posExcluir = new List<int>();
-            for (int  i= 0; i < listBox.Items.Count; i++)
+            int posExcluir = PoligonoSelecionado();
+            if (posExcluir != -1)
             {
-                if (listBox.GetItemChecked(i))
+                listaPoligonos.RemoveAt(posExcluir);
+                listBox.Items.RemoveAt(posExcluir);
+
+                LimparTela();
+
+                foreach (var poligono in listaPoligonos)
                 {
-                    posExcluir.Add(i);
+                    poligono.DesenharPoligono(_imagem, pictureBoxPoligono);
                 }
             }
-
-
-            foreach (var item in posExcluir)
-            {
-                poligonos.RemoveAt(item);
-                listBox.Items.RemoveAt(item);
-            }
-
-            LimparTela();
-
-            foreach(var item in poligonos)
-            {
-                Poligono.Desenhar(item, _imagem, pictureBoxPoligono);
-            }
         }
+
+        private void btnRotacao_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                try
+                {
+                    int rotacao = Convert.ToInt32(tbRotacao.Text);
+
+                    if (rbCentro.Checked)
+                    {
+
+                    }
+                    else if (rbOrigem.Checked)
+                    {
+
+                    }
+                    else if (rbCoordenada.Checked)
+                    {
+                        int coordenadaX = Convert.ToInt32(txCordX.Text);
+                        int coordenadaY = Convert.ToInt32(txCordY.Text);
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("O valor informado deve ser um número");
+                }
+            }            
+        }
+
+        private void btnTranslacao_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                try
+                {                   
+                    int dX = Convert.ToInt32(tbTranslacaoX.Text);
+                    int dY = Convert.ToInt32(tbTranslacaoY.Text);
+
+                    Poligono poligono = this.listaPoligonos[pos];
+                    foreach (var ponto in poligono.Pontos)
+                    {
+                        ponto.X += dX;
+                        ponto.Y += dY;
+                    }
+
+                    LimparTela();
+
+                    foreach (var tempPoligono in listaPoligonos)
+                    {
+                        tempPoligono.DesenharPoligono(_imagem, pictureBoxPoligono);
+                    }
+
+
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("O valor informado deve ser um número");
+                }
+            }            
+        }
+
     }
 }

@@ -47,11 +47,11 @@ namespace EditorGrafico
                 {
                     Reta.EquacaoRealReta(x1, y1, x2, y2, _imagem);
                 }
-                if (rbReta2.Checked)
+                else if (rbReta2.Checked)
                 {
                     Reta.DigitalDifferentialAnalyzer(x1, y1, x2, y2, _imagem);
                 }
-                if (rbReta3.Checked)
+                else if (rbReta3.Checked)
                 {
                     Reta.PontoMedio(x1, y1, x2, y2, _imagem);
                 }
@@ -61,11 +61,11 @@ namespace EditorGrafico
                 {                    
                     Circunferencia.EquacaoReal(x1, y1, x2, y2, _imagem);
                 }
-                if (rbCircunferencia2.Checked)
+                else if (rbCircunferencia2.Checked)
                 {
                     Circunferencia.EquacaoTrig(x1, y1, x2, y2, _imagem);
                 }
-                if (rbCircunferencia3.Checked)
+                else if (rbCircunferencia3.Checked)
                 {
 
                 }
