@@ -71,7 +71,6 @@ namespace EditorGrafico
                 e.NewValue = e.CurrentValue;
 
                 MessageBox.Show("Você pode apenas selecionar um item");
-
             }
         }
 

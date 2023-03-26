@@ -58,6 +58,7 @@
     <Compile Include="FormPoligonal.Designer.cs">
       <DependentUpon>FormPoligonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\Elipse.cs" />
     <Compile Include="models\Poligono.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

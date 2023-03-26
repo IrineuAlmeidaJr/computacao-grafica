@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace EditorGrafico.utils
 {
-    abstract class Circunferencia
+    public abstract class Circunferencia
     {
-        public static void EquacaoReal(double cx, double cy, double x2, double y2, Bitmap imagem)
+        public static void EquacaoReal(int cx, int cy, int x2, int y2, Bitmap imagem)
         {
             double raio = Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2));
             double y;
@@ -21,7 +21,7 @@ namespace EditorGrafico.utils
             }
         }
 
-        public static void EquacaoTrig(double cx, double cy, double x2, double y2, Bitmap imagem)
+        public static void EquacaoTrig(int cx, int cy, int x2, int y2, Bitmap imagem)
         {
             double raio = Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2));
             double y;
@@ -42,12 +42,64 @@ namespace EditorGrafico.utils
             }
         }
 
+        public static void PontoMedio(int cx, int cy, int x2, int y2, Bitmap imagem)
+        {
+            //int x, y;
+            //double raio = Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2));
+
+            //x = 0;
+            //y = Convert.ToInt32(raio);
+            //double d = 1 - raio;
+            //Simetria((int)cx, (int)cy, x, y, imagem);
+            //while (y > x)
+            //{
+            //    if (d < 0) // Dentro circunferência -> E
+            //    {
+            //        d += 2 * x + 3;
+            //    }
+            //    else // Fora circunferência -> SE
+            //    {
+            //        d += 2 * (x - y) + 5;
+            //        y--;
+            //    }
+            //    x++;
+            //    Simetria((int)cx, (int)cy, x, y, imagem);
+            //}
+
+            int x, y;
+            int raio = (int)Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2));
+
+            x = 0;
+            y = raio;
+            int deltaE = 3;
+            int deltaSE = -2 * raio + 5;
+            int d = 1 - raio;
+            Simetria(cx, cy, x, y, imagem);
+            while (y > x)
+            {
+                if (d < 0) // Dentro circunferência -> E
+                {
+                    d += deltaE;
+                    deltaE += 2;
+                    deltaSE += 2;
+                }
+                else // Fora circunferência -> SE
+                {
+                    d += deltaSE;
+                    deltaE += 2;
+                    deltaSE += 4;
+                    y--;
+                }
+                x++;
+                Simetria(cx, cy, x, y, imagem);
+            }
+
+        }
 
         private static void Simetria(int cx, int cy, int x, int y, Bitmap imagem)
         {
             int w = imagem.Width;
             int h = imagem.Height;
-            // Um if para cada um para verificar os limites
             int tempX, tempY;
 
             tempX = cx + x;
@@ -77,7 +129,6 @@ namespace EditorGrafico.utils
             {
                 imagem.SetPixel(tempX, tempY, Color.Red);
             }
-
 
 
 

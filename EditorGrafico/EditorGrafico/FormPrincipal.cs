@@ -1,4 +1,5 @@
-﻿using EditorGrafico.utils;
+﻿using EditorGrafico.models;
+using EditorGrafico.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace EditorGrafico
 {
     public partial class FormPrincipal : Form
     {
-        double x1, x2, y1, y2;
+        int x1, x2, y1, y2;
         private Bitmap _imagem;               
 
         public FormPrincipal()
@@ -21,12 +22,22 @@ namespace EditorGrafico
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
+            CarregarTela();
+        }
+
+        private void CarregarTela()
+        {
             int w = pictureBox.Height;
             int h = pictureBox.Width;
-            _imagem = 
-                new Bitmap(h, w, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+            _imagem =
+               new Bitmap(h, w, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
             Graphics graphics = Graphics.FromImage(_imagem);
             pictureBox.Image = _imagem;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            CarregarTela();
         }
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -67,7 +78,14 @@ namespace EditorGrafico
                 }
                 else if (rbCircunferencia3.Checked)
                 {
+                    Circunferencia.PontoMedio(x1, y1, x2, y2, _imagem);
+                }
 
+                // ---> CIRCUNFERÊNCIA
+                if (rbElipse.Checked)
+                {
+                    Elipse.MidpointElipse(x1, y1, x2, y2, _imagem);
+                    //Circunferencia.EquacaoReal(x1, y1, x2, y2, _imagem);
                 }
 
 

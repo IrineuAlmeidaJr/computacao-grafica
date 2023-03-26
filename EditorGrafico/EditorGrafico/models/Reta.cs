@@ -10,7 +10,7 @@ namespace EditorGrafico.utils
 {
     abstract class Reta
     {
-        public static void EquacaoRealReta(double x1, double y1, double x2, double y2, Bitmap imagem)
+        public static void EquacaoRealReta(int x1, int y1, int x2, int y2, Bitmap imagem)
         {
             Graphics graphics = Graphics.FromImage(imagem);
             int inc;
@@ -42,8 +42,8 @@ namespace EditorGrafico.utils
 
         } 
 
-        public static void DigitalDifferentialAnalyzer(double x1, double y1, 
-            double x2, double y2, Bitmap imagem)
+        public static void DigitalDifferentialAnalyzer(int x1, int y1, 
+            int x2, int y2, Bitmap imagem)
         {
             Graphics graphics = Graphics.FromImage(imagem);
             int cont;
@@ -120,7 +120,7 @@ namespace EditorGrafico.utils
 
         }
 
-        public static void PontoMedio(double x1, double y1, double x2, double y2, Bitmap imagem)
+        public static void PontoMedio(int x1, int y1, int x2, int y2, Bitmap imagem)
         {
             int declive;
             double deltaX, deltaY, incE, incNE, d, x, y;
