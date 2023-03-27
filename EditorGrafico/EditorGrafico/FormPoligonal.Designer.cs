@@ -528,6 +528,7 @@
             this.btnEscala.TabIndex = 4;
             this.btnEscala.Text = "Aplicar";
             this.btnEscala.UseVisualStyleBackColor = true;
+            this.btnEscala.Click += new System.EventHandler(this.btnEscala_Click);
             // 
             // label4
             // 

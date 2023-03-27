@@ -24,7 +24,6 @@ namespace EditorGrafico.utils
         public static void EquacaoTrig(int cx, int cy, int x2, int y2, Bitmap imagem)
         {
             double raio = Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2));
-            double y;
 
             double trigX, trigY, alpha;
             double inc = 360 / (2 * Math.PI * raio);

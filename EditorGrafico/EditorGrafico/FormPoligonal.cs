@@ -163,26 +163,52 @@ namespace EditorGrafico
             int pos = PoligonoSelecionado();
             if (pos != -1)
             {
-                Poligono pAtual = listaPoligonos[pos];
+                try
+                {
+                    int dX = Convert.ToInt32(tbTranslacaoX.Text);
+                    int dY = Convert.ToInt32(tbTranslacaoY.Text);
+
+                    Poligono poligono = this.listaPoligonos[pos];
+                    poligono.Translacao(dX, dY);
+
+                    CarregarTela();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("O valor informado deve ser um número");
+                }
+            }
+        }
+
+        private void btnEscala_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                Poligono poligono = listaPoligonos[pos];
                 try
                 {
                     double rotacao = Convert.ToDouble(tbRotacao.Text);
-                    int eixoX, eixoY;
+                    double eixoX, eixoY;
 
                     if (rbCentro.Checked)
                     {
-                        // Calcular o Centro 
                         eixoX = 0;
                         eixoY = 0;
-                        double[] centroide = pAtual.Centroide();
 
 
 
                     }
                     else if (rbOrigem.Checked)
                     {
-                        eixoX = 0;
-                        eixoY = 0;
+                        // Calcular o Centro 
+                        eixoX = Convert.ToDouble(tbTranslacaoX);
+                        eixoY = Convert.ToDouble(tbTranslacaoY);
+
+                       
+
+
+
 
                     }
                     else if (rbCoordenada.Checked)
@@ -197,7 +223,5 @@ namespace EditorGrafico
                 }
             }
         }
-
-       
     }
 }
