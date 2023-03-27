@@ -76,8 +76,8 @@ namespace EditorGrafico
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            int x = e.X;
-            int y = e.Y;
+            double x = e.X;
+            double y = e.Y;
 
             if (e.Button == MouseButtons.Right)
             {
@@ -122,22 +122,34 @@ namespace EditorGrafico
             int pos = PoligonoSelecionado();
             if (pos != -1)
             {
+                Poligono pAtual = listaPoligonos[pos];
                 try
                 {
                     int rotacao = Convert.ToInt32(tbRotacao.Text);
-
+                    int eixoX, eixoY;                    
+                    
                     if (rbCentro.Checked)
                     {
+                        // Calcular o Centro 
+                        eixoX = 0;
+                        eixoY = 0;
+                        int[] centroide = pAtual.Centroide();
+
+                        //Graphics graphics = Graphics.FromImage(_imagem);
+                        //graphics.FillRectangle(Brushes.Red, centroide[0], centroide[1], 10, 10);
+
 
                     }
                     else if (rbOrigem.Checked)
                     {
+                        eixoX = 0;
+                        eixoY = 0;
 
                     }
                     else if (rbCoordenada.Checked)
                     {
-                        int coordenadaX = Convert.ToInt32(txCordX.Text);
-                        int coordenadaY = Convert.ToInt32(txCordY.Text);
+                        eixoX = Convert.ToInt32(txCordX.Text);
+                        eixoY = Convert.ToInt32(txCordY.Text);
                     }
                 }
                 catch (FormatException)
@@ -169,5 +181,6 @@ namespace EditorGrafico
             }            
         }
 
+       
     }
 }

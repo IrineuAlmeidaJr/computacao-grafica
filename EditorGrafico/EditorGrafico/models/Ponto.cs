@@ -11,10 +11,12 @@ namespace EditorGrafico.utils
 {
     public class Ponto
     {
-        public int X {  get; set; }
-        public int Y { get; set; }
+        public double X {  get; set; }
+        public double Y { get; set; }
 
-        public Ponto(int x, int y)
+        // colocar matriz acumulada
+
+        public Ponto(double x, double y)
         {
             X = x;
             Y = y;

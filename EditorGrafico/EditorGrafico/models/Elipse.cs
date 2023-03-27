@@ -9,7 +9,7 @@ namespace EditorGrafico.models
 {
     public abstract class Elipse
     {
-        public static void MidpointElipse(int cx, int cy, int x2, int y2, Bitmap imagem)
+        public static void PontoMedio(int cx, int cy, int x2, int y2, Bitmap imagem)
         {
             // Calcula o raio para o eixo de X e Y
             int rx = (int)Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2)); ;

@@ -84,7 +84,7 @@ namespace EditorGrafico
                 // ---> CIRCUNFERÊNCIA
                 if (rbElipse.Checked)
                 {
-                    Elipse.MidpointElipse(x1, y1, x2, y2, _imagem);
+                    Elipse.PontoMedio(x1, y1, x2, y2, _imagem);
                     //Circunferencia.EquacaoReal(x1, y1, x2, y2, _imagem);
                 }
 
