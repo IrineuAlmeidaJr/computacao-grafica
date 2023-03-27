@@ -34,9 +34,9 @@ namespace EditorGrafico.models
 
         }
 
-        public int Area()
+        public double Area()
         {
-            int somatorio = 0;
+            double somatorio = 0;
             for(int i=0; i<this.Pontos.Count -1 ; i++)
             {
                 somatorio += Pontos[i].X * Pontos[i + 1].Y - Pontos[i + 1].X * Pontos[i].Y;
@@ -46,9 +46,9 @@ namespace EditorGrafico.models
         }
 
 
-        public int[] Centroide()
+        public double[] Centroide()
         {
-            int cX, cY;
+            double cX, cY;
 
 
             //for (int i = 0; i < Pontos.Count; i++)
@@ -64,8 +64,8 @@ namespace EditorGrafico.models
             //cY /= Pontos.Count;
 
 
-            int somatorio = 0;
-            int area = Area();
+            double somatorio = 0;
+            double area = Area();
             for (int i = 0; i < Pontos.Count - 1; i++)
             {
                 somatorio += (Pontos[i].X + Pontos[i + 1].X) * (Pontos[i].X * Pontos[i + 1].Y - Pontos[i + 1].X * Pontos[i].Y);
@@ -79,7 +79,7 @@ namespace EditorGrafico.models
             }
             cY = somatorio / (6 * area);
 
-            return new int[2] { cX , cY };
+            return new double[2] { cX , cY };
         }
 
         public void Translacao(int dX, int dY)

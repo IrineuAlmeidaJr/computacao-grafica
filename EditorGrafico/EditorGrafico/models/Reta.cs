@@ -49,7 +49,7 @@ namespace EditorGrafico.utils
             int cont;
             int length;
             double x, y, incX, incY;
-            double deltaX, deltaY, m;
+            double deltaX, deltaY;
 
             deltaX = x2 - x1;
             deltaY = y2 - y1;

@@ -133,10 +133,9 @@ namespace EditorGrafico
                         // Calcular o Centro 
                         eixoX = 0;
                         eixoY = 0;
-                        int[] centroide = pAtual.Centroide();
+                        double[] centroide = pAtual.Centroide();
 
-                        //Graphics graphics = Graphics.FromImage(_imagem);
-                        //graphics.FillRectangle(Brushes.Red, centroide[0], centroide[1], 10, 10);
+                        
 
 
                     }
@@ -164,21 +163,39 @@ namespace EditorGrafico
             int pos = PoligonoSelecionado();
             if (pos != -1)
             {
+                Poligono pAtual = listaPoligonos[pos];
                 try
-                {                   
-                    int dX = Convert.ToInt32(tbTranslacaoX.Text);
-                    int dY = Convert.ToInt32(tbTranslacaoY.Text);
+                {
+                    double rotacao = Convert.ToDouble(tbRotacao.Text);
+                    int eixoX, eixoY;
 
-                    Poligono poligono = this.listaPoligonos[pos];
-                    poligono.Translacao(dX, dY);
+                    if (rbCentro.Checked)
+                    {
+                        // Calcular o Centro 
+                        eixoX = 0;
+                        eixoY = 0;
+                        double[] centroide = pAtual.Centroide();
 
-                    CarregarTela();
+
+
+                    }
+                    else if (rbOrigem.Checked)
+                    {
+                        eixoX = 0;
+                        eixoY = 0;
+
+                    }
+                    else if (rbCoordenada.Checked)
+                    {
+                        eixoX = Convert.ToInt32(txCordX.Text);
+                        eixoY = Convert.ToInt32(txCordY.Text);
+                    }
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("O valor informado deve ser um número");
+                    MessageBox.Show("O valor informado deve ser um número real");
                 }
-            }            
+            }
         }
 
        
