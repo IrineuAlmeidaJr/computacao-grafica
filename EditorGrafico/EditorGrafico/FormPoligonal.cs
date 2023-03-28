@@ -19,6 +19,8 @@ namespace EditorGrafico
         private List<Ponto> pontosPoligono;
         private List<Poligono> listaPoligonos;
 
+        private List<Ponto> pontosColoridos;
+
         private Bitmap _imagem;
 
         public FormPoligonal()
@@ -29,6 +31,8 @@ namespace EditorGrafico
             this.numPoligono = 1;
             this.pontosPoligono = new List<Ponto>();
             this.listaPoligonos = new List<Poligono>();
+            this.pontosColoridos = new List<Ponto>();
+
 
             CarregarTela();
         }
@@ -76,8 +80,8 @@ namespace EditorGrafico
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            double x = e.X;
-            double y = e.Y;
+            int x = e.X;
+            int y = e.Y;
 
             if (e.Button == MouseButtons.Right)
             {
@@ -122,7 +126,7 @@ namespace EditorGrafico
             int pos = PoligonoSelecionado();
             if (pos != -1)
             {
-                Poligono pAtual = listaPoligonos[pos];
+                Poligono poligono = listaPoligonos[pos];
                 try
                 {
                     int rotacao = Convert.ToInt32(tbRotacao.Text);
@@ -131,25 +135,29 @@ namespace EditorGrafico
                     if (rbCentro.Checked)
                     {
                         // Calcular o Centro 
-                        eixoX = 0;
-                        eixoY = 0;
-                        double[] centroide = pAtual.Centroide();
+                        //eixoX = 0;
+                        //eixoY = 0;
+                        //int[] centroide = poligono.Centroide();
+                        //poligono.Translacao(-centroide[0], -centroide[1]);
+                        //poligono.Rotacao(rotacao);
+                        //poligono.Translacao(centroide[0], centroide[1]);
 
-                        
 
+                        poligono.RotacaoCentro(rotacao);
 
                     }
                     else if (rbOrigem.Checked)
                     {
-                        eixoX = 0;
-                        eixoY = 0;
+                        poligono.Rotacao(rotacao);
 
                     }
                     else if (rbCoordenada.Checked)
                     {
                         eixoX = Convert.ToInt32(txCordX.Text);
                         eixoY = Convert.ToInt32(txCordY.Text);
+                        poligono.RotacaoCentro(rotacao, eixoX, eixoY);
                     }
+                    CarregarTela();
                 }
                 catch (FormatException)
                 {
@@ -188,39 +196,80 @@ namespace EditorGrafico
                 Poligono poligono = listaPoligonos[pos];
                 try
                 {
-                    double rotacao = Convert.ToDouble(tbRotacao.Text);
-                    double eixoX, eixoY;
+                    int eixoX, eixoY;
+                    double escalaX, escalaY;
+
+                    escalaX = Convert.ToDouble(tbEscalaX.Text);
+                    escalaY = Convert.ToDouble(tbEscalaY.Text);
 
                     if (rbCentro.Checked)
                     {
-                        eixoX = 0;
-                        eixoY = 0;
-
-
+                        //int[] centroide = poligono.Centroide();
+                        //poligono.Translacao(-centroide[0], -centroide[1]);
+                        //poligono.Escala(escalaX, escalaY);
+                        //poligono.Translacao(centroide[0], centroide[1]);
+                        poligono.EscalaCentro(escalaX, escalaY);
 
                     }
                     else if (rbOrigem.Checked)
                     {
                         // Calcular o Centro 
-                        eixoX = Convert.ToDouble(tbTranslacaoX);
-                        eixoY = Convert.ToDouble(tbTranslacaoY);
-
-                       
-
-
-
-
+                        poligono.Escala(escalaX, escalaY);
                     }
                     else if (rbCoordenada.Checked)
                     {
                         eixoX = Convert.ToInt32(txCordX.Text);
                         eixoY = Convert.ToInt32(txCordY.Text);
+                        poligono.EscalaCentro(escalaX, escalaY, eixoX, eixoY);
                     }
+
+                    CarregarTela();
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("O valor informado deve ser um número real");
                 }
+            }
+        }
+
+        private void FloodFill(int x, int y)
+        {
+            try
+            {
+                Color color = _imagem.GetPixel(x, y);
+                string nameColor = color.Name;
+                bool temp = _imagem.GetPixel(x, y).Name == "0";
+                if (temp)
+                {
+                    _imagem.SetPixel(x, y, Color.Blue);
+                    //pontosColoridos.Add(new Ponto(x, y));
+                    FloodFill(x + 1, y);
+                    FloodFill(x, y + 1);
+                    FloodFill(x - 1, y);
+                    FloodFill(x, y - 1);
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Estouro de Pilha");
+            }   
+            
+            
+        }
+
+        private void btnPreencherPoligono_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                Poligono poligono = listaPoligonos[pos];
+                int[] pontoXY = poligono.Centroide();
+                FloodFill(pontoXY[0], pontoXY[1]);
+                //foreach (var ponto in pontosColoridos)
+                //{
+                //    _imagem.SetPixel(ponto.X, ponto.Y, Color.Blue);
+                //}
+                
             }
         }
     }

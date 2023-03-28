@@ -12,8 +12,10 @@ namespace EditorGrafico.models
         public static void PontoMedio(int cx, int cy, int x2, int y2, Bitmap imagem)
         {
             // Calcula o raio para o eixo de X e Y
-            int rx = (int)Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2)); ;
-            int ry = (int)(rx - rx * 0.3);
+            //int rx = (int)Math.Sqrt(Math.Pow(x2 - cx, 2) + Math.Pow(y2 - cy, 2)); 
+            //int ry = (int)(rx - rx * 0.3);
+            int rx = Math.Abs(x2 - cx);
+            int ry = Math.Abs(y2 - cy);
             int rx_pot = rx * rx;
             int ry_pot = ry * ry;
 

@@ -114,7 +114,7 @@
             // 
             // pictureBoxPoligono
             // 
-            this.pictureBoxPoligono.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBoxPoligono.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBoxPoligono.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxPoligono.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxPoligono.Location = new System.Drawing.Point(3, 3);
@@ -232,6 +232,7 @@
             this.btnPreencherPoligono.TabIndex = 4;
             this.btnPreencherPoligono.Text = "Preencher";
             this.btnPreencherPoligono.UseVisualStyleBackColor = true;
+            this.btnPreencherPoligono.Click += new System.EventHandler(this.btnPreencherPoligono_Click);
             // 
             // tableLayoutPanel6
             // 

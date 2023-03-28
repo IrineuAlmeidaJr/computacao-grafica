@@ -11,15 +11,18 @@ namespace EditorGrafico.utils
 {
     public class Ponto
     {
-        public double X {  get; set; }
-        public double Y { get; set; }
+        public int X {  get; set; }
+        public int Y { get; set; }
+        int[,] Matriz { get; set; } 
 
-        // colocar matriz acumulada
-
-        public Ponto(double x, double y)
+        public Ponto(int x, int y)
         {
             X = x;
             Y = y;
+            Matriz = new int[3,1];
+            Matriz[0, 0] = x;
+            Matriz[1, 0] = y;
+            Matriz[2, 0] = 1;
         }
 
         public static void DesenharReta(List<Ponto> pontos, Bitmap imagem, PictureBox pictureBoxPoligono)
