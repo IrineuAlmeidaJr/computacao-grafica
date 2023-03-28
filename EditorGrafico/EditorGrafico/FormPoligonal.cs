@@ -98,7 +98,7 @@ namespace EditorGrafico
 
                     listBox.Items.Add($"Poligono {numPoligono++}");
 
-                    this.pontosPoligono = new List<Ponto>();
+                    this.pontosPoligono.Clear();
                 }
             }
             else
@@ -263,8 +263,8 @@ namespace EditorGrafico
             if (pos != -1)
             {
                 Poligono poligono = listaPoligonos[pos];
-                int[] pontoXY = poligono.Centroide();
-                FloodFill(pontoXY[0], pontoXY[1]);
+                double[] pontoXY = poligono.Centroide();
+                FloodFill((int)pontoXY[0], (int)pontoXY[1]);
                 //foreach (var ponto in pontosColoridos)
                 //{
                 //    _imagem.SetPixel(ponto.X, ponto.Y, Color.Blue);

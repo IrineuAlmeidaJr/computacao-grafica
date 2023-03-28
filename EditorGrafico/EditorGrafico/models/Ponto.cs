@@ -13,16 +13,11 @@ namespace EditorGrafico.utils
     {
         public int X {  get; set; }
         public int Y { get; set; }
-        int[,] Matriz { get; set; } 
 
         public Ponto(int x, int y)
         {
             X = x;
             Y = y;
-            Matriz = new int[3,1];
-            Matriz[0, 0] = x;
-            Matriz[1, 0] = y;
-            Matriz[2, 0] = 1;
         }
 
         public static void DesenharReta(List<Ponto> pontos, Bitmap imagem, PictureBox pictureBoxPoligono)
