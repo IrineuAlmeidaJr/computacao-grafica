@@ -239,9 +239,9 @@ namespace EditorGrafico
                 Poligono poligono = listaPoligonos[pos];
 
                 poligono.NomeCor = comboBox.Text;
-                //poligono.FloodFill(_imagem);
+                poligono.FloodFill(_imagem);
 
-                poligono.Rasterizacao(pictureBoxPoligono.Height, _imagem);
+                //poligono.Rasterizacao(pictureBoxPoligono.Height, _imagem);
 
                 CarregarTela();
             }
@@ -321,12 +321,25 @@ namespace EditorGrafico
 
         private void btnEspalhamentoX_Click(object sender, EventArgs e)
         {
-
             int pos = PoligonoSelecionado();
             if (pos != -1)
             {
                 Poligono poligono = listaPoligonos[pos];
-                poligono.Espelhamento("X");
+                if (rbCentro.Checked)
+                {
+                    poligono.Espelhamento("X");
+                }
+                else if (rbOrigem.Checked)
+                {
+                    poligono.EspelhamentoOrigem("X");
+                }
+                else if (rbCoordenada.Checked)
+                {
+
+                    poligono.Espelhamento("X");
+                }
+
+
                 CarregarTela();
             }
         }
@@ -337,7 +350,21 @@ namespace EditorGrafico
             if (pos != -1)
             {
                 Poligono poligono = listaPoligonos[pos];
-                poligono.Espelhamento("Y");
+                if (rbCentro.Checked)
+                {
+                    poligono.Espelhamento("Y");
+                }
+                else if (rbOrigem.Checked)
+                {
+                    poligono.EspelhamentoOrigem("Y");
+                }
+                else if (rbCoordenada.Checked)
+                {
+
+                    poligono.Espelhamento("Y");
+                }
+
+
                 CarregarTela();
             }
         }
@@ -348,7 +375,21 @@ namespace EditorGrafico
             if (pos != -1)
             {
                 Poligono poligono = listaPoligonos[pos];
-                poligono.Espelhamento("XY");
+                if (rbCentro.Checked)
+                {
+                    poligono.Espelhamento("XY");
+                }
+                else if (rbOrigem.Checked)
+                {
+                    poligono.EspelhamentoOrigem("XY");
+                }
+                else if (rbCoordenada.Checked)
+                {
+
+                    poligono.Espelhamento("XY");
+                }
+
+
                 CarregarTela();
             }
         }

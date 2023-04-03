@@ -48,8 +48,8 @@ namespace EditorGrafico.models
 
                 if (_colorido)
                 {
-                    //FloodFill(imagem);
-                    Rasterizacao(pictureBoxPoligono.Width, imagem);
+                    FloodFill(imagem);
+                    //Rasterizacao(pictureBoxPoligono.Width, imagem);
                 }
                             
 
@@ -476,7 +476,6 @@ namespace EditorGrafico.models
             double[,] matrizResultante_2 = new double[3, 3];
             double[,] novaMatrizAcumulada = new double[3, 3];
 
-            double[,] matrizAcumulada = new double[3, 1];
             // Matriz Identidade
             for (int i = 0; i < 3; i++)
             {
@@ -535,6 +534,50 @@ namespace EditorGrafico.models
 
         }
 
+        public void EspelhamentoOrigem(string escolhido)
+        {
+            double[,] matrizEspelhamento = new double[3, 3];
+            double[,] novaMatrizAcumulada = new double[3, 3];
+
+            switch (escolhido)
+            {
+                case "X":
+                    matrizEspelhamento[0, 0] = 1;
+                    matrizEspelhamento[1, 1] = -1;
+                    matrizEspelhamento[2, 2] = 1;
+                    break;
+                case "Y":
+                    matrizEspelhamento[0, 0] = -1;
+                    matrizEspelhamento[1, 1] = 1;
+                    matrizEspelhamento[2, 2] = 1;
+                    break;
+                case "XY":
+                    matrizEspelhamento[0, 0] = -1;
+                    matrizEspelhamento[1, 1] = -1;
+                    matrizEspelhamento[2, 2] = 1;
+                    break;
+            }
+
+
+            // NovaMA = Espalhamento * MA
+            // matrizResultante_1 = T(cent) * Espalhamento
+            for (int linha = 0; linha < 3; linha++)
+            {
+                for (int coluna = 0; coluna < 3; coluna++)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        novaMatrizAcumulada[linha, coluna] += matrizEspelhamento[linha, i]  * this.MatrizAcumulada[i, coluna];
+                    }
+                }
+            }            
+
+            this.MatrizAcumulada = novaMatrizAcumulada;
+
+            MatrizAcumuladaPontos();
+
+        }
+
         public void Espelhamento(string escolhido)
         {
             double[] coordenadasXY = Centroide();
@@ -546,7 +589,6 @@ namespace EditorGrafico.models
             double[,] matrizResultante_2 = new double[3, 3];
             double[,] novaMatrizAcumulada = new double[3, 3];
 
-            double[,] matrizAcumulada = new double[3, 1];
             // Matriz Identidade
             for (int i = 0; i < 3; i++)
             {
