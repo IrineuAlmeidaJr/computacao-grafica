@@ -335,8 +335,9 @@ namespace EditorGrafico
                 }
                 else if (rbCoordenada.Checked)
                 {
-
-                    poligono.Espelhamento("X");
+                    int eixoX = Convert.ToInt32(txCordX.Text);
+                    int eixoY = Convert.ToInt32(txCordY.Text);
+                    poligono.Espelhamento("X", eixoX, eixoY);
                 }
 
 
@@ -360,8 +361,9 @@ namespace EditorGrafico
                 }
                 else if (rbCoordenada.Checked)
                 {
-
-                    poligono.Espelhamento("Y");
+                    int eixoX = Convert.ToInt32(txCordX.Text);
+                    int eixoY = Convert.ToInt32(txCordY.Text);
+                    poligono.Espelhamento("Y", eixoX, eixoY);
                 }
 
 
@@ -385,8 +387,9 @@ namespace EditorGrafico
                 }
                 else if (rbCoordenada.Checked)
                 {
-
-                    poligono.Espelhamento("XY");
+                    int eixoX = Convert.ToInt32(txCordX.Text);
+                    int eixoY = Convert.ToInt32(txCordY.Text);
+                    poligono.Espelhamento("XY", eixoX, eixoY);
                 }
 
 

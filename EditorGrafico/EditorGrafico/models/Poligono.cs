@@ -578,9 +578,17 @@ namespace EditorGrafico.models
 
         }
 
-        public void Espelhamento(string escolhido)
+        public void Espelhamento(string escolhido, int eixoX = 0, int eixoY = 0)
         {
-            double[] coordenadasXY = Centroide();
+            double[] coordenadasXY;
+            if (eixoX == 0 && eixoY == 0)
+            {
+                coordenadasXY = Centroide();
+            }
+            else
+            {
+                coordenadasXY = new double[] { eixoX, eixoY };
+            }
 
             double[,] matrizEspelhamento = new double[3, 3];
             double[,] matrizTranslacao_origem = new double[3, 3];
