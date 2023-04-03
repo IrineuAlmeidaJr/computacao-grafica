@@ -105,28 +105,28 @@ namespace EditorGrafico.utils
             tempY = cy + y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx + y;
             tempY = cy + x;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx + x;
             tempY = cy - y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx + y;
             tempY = cy - x;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
 
@@ -135,29 +135,29 @@ namespace EditorGrafico.utils
             tempY = cy - y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - y;
             tempY = cy - x;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - x;
             tempY = cy + y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - y;
             tempY = cy + x;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
-            }
+                imagem.SetPixel(tempX, tempY, Color.Black);
+            }   
 
         }
 

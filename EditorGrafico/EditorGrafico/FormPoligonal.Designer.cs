@@ -76,6 +76,7 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoligono)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -201,6 +202,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.btnExcluir, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnPreencherPoligono, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.comboBox, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(182, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -593,6 +595,7 @@
             this.btnCisalhamento.TabIndex = 5;
             this.btnCisalhamento.Text = "Aplicar";
             this.btnCisalhamento.UseVisualStyleBackColor = true;
+            this.btnCisalhamento.Click += new System.EventHandler(this.btnCisalhamento_Click);
             // 
             // tbCesilhamentoY
             // 
@@ -656,6 +659,7 @@
             this.btnEspalhamentoY.TabIndex = 8;
             this.btnEspalhamentoY.Text = "Y";
             this.btnEspalhamentoY.UseVisualStyleBackColor = true;
+            this.btnEspalhamentoY.Click += new System.EventHandler(this.btnEspalhamentoY_Click);
             // 
             // btnEspalhamentoX
             // 
@@ -667,6 +671,7 @@
             this.btnEspalhamentoX.TabIndex = 7;
             this.btnEspalhamentoX.Text = "X";
             this.btnEspalhamentoX.UseVisualStyleBackColor = true;
+            this.btnEspalhamentoX.Click += new System.EventHandler(this.btnEspalhamentoX_Click);
             // 
             // btnEspalhamentoXY
             // 
@@ -678,6 +683,7 @@
             this.btnEspalhamentoXY.TabIndex = 6;
             this.btnEspalhamentoXY.Text = "XY";
             this.btnEspalhamentoXY.UseVisualStyleBackColor = true;
+            this.btnEspalhamentoXY.Click += new System.EventHandler(this.btnEspalhamentoXY_Click);
             // 
             // label6
             // 
@@ -726,12 +732,29 @@
             this.label8.Text = "clique com botao esquerdo do mouse e arraste para adicionar os pontos. Para termi" +
     "nar cloque botao direito do mouse.";
             // 
+            // comboBox
+            // 
+            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "Vermelho",
+            "Azul",
+            "Verde",
+            "Amarelo",
+            "Roxo"});
+            this.comboBox.Location = new System.Drawing.Point(3, 99);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(91, 21);
+            this.comboBox.TabIndex = 5;
+            // 
             // FormPoligonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 636);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormPoligonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Poligonal";
@@ -816,5 +839,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox;
     }
 }

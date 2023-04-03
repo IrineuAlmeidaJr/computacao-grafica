@@ -58,7 +58,7 @@ namespace EditorGrafico.models
                     d2 = d2 + rx_pot * (-2 * y + 3);
                     y--;
                 }
-                Simetria4_reg1(cx, cy, x, y, imagem);
+                Simetria4_reg2(cx, cy, x, y, imagem);
             }
         }
 
@@ -72,28 +72,28 @@ namespace EditorGrafico.models
             tempY = cy + y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - x;
             tempY = cy + y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx + x;
             tempY = cy - y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - x;
             tempY = cy - y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
         }
 
@@ -107,28 +107,28 @@ namespace EditorGrafico.models
             tempY = cy + y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - x;
             tempY = cy + y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx + x;
             tempY = cy - y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
 
             tempX = cx - x;
             tempY = cy - y;
             if (tempX > 0 && tempX < w && tempY > 0 && tempY < h)
             {
-                imagem.SetPixel(tempX, tempY, Color.Red);
+                imagem.SetPixel(tempX, tempY, Color.Black);
             }
         }
 

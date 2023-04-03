@@ -27,7 +27,7 @@ namespace EditorGrafico.utils
                 for (y = y1; y != y2; y += inc)
                 {
                     x = x1 + (y - y1) / m;
-                    imagem.SetPixel((int)x, (int)y, Color.Red);
+                    imagem.SetPixel((int)x, (int)y, Color.Black);
                 }
             }
             else
@@ -36,7 +36,7 @@ namespace EditorGrafico.utils
                 for (x = x1; x != x2; x += inc)
                 {
                     y = y1 + m * (x - x1);
-                    imagem.SetPixel((int)x, (int)y, Color.Red);
+                    imagem.SetPixel((int)x, (int)y, Color.Black);
                 }
             }
 
@@ -74,7 +74,7 @@ namespace EditorGrafico.utils
             cont = 0;
             while (cont <= length)
             {
-                imagem.SetPixel((int)Math.Round(x), (int)Math.Round(y), Color.Red);
+                imagem.SetPixel((int)Math.Round(x), (int)Math.Round(y), Color.Black);
                 x += incX;
                 y += incY;
 
@@ -128,7 +128,7 @@ namespace EditorGrafico.utils
             deltaY = y2 - y1;
 
 
-            if (Math.Abs(deltaX) > Math.Abs(deltaY))
+            if (Math.Abs(deltaX) > Math.Abs(deltaY)) // 10 -- 5
             {
                 if (x1 > x2)
                 {
@@ -149,7 +149,7 @@ namespace EditorGrafico.utils
                 y = y1;
                 for (x = x1; x <= x2; x++)
                 {
-                    imagem.SetPixel((int)x, (int)y, Color.Red);
+                    imagem.SetPixel((int)x, (int)y, Color.Black);
                     if (d <= 0)
                     {
                         d += incE;
@@ -182,7 +182,7 @@ namespace EditorGrafico.utils
                 x = x1;
                 for (y = y1; y <= y2; y++)
                 {
-                    imagem.SetPixel((int)x, (int)y, Color.Red);
+                    imagem.SetPixel((int)x, (int)y, Color.Black);
                     if (d <= 0)
                     {
                         d += incE;

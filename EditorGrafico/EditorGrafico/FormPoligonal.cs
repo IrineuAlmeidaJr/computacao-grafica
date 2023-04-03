@@ -89,7 +89,6 @@ namespace EditorGrafico
                 {
                     x = pontosPoligono[0].X;
                     y = pontosPoligono[0].Y;
-                    pontosPoligono.Add(new Ponto(x, y));                    
 
                     listaPoligonos.Add(new Poligono(pontosPoligono));
 
@@ -117,7 +116,7 @@ namespace EditorGrafico
                 listaPoligonos.RemoveAt(posExcluir);
                 listBox.Items.RemoveAt(posExcluir);
 
-                CarregarTela();                
+                CarregarTela();
             }
         }
 
@@ -130,8 +129,8 @@ namespace EditorGrafico
                 try
                 {
                     int rotacao = Convert.ToInt32(tbRotacao.Text);
-                    int eixoX, eixoY;                    
-                    
+                    int eixoX, eixoY;
+
                     if (rbCentro.Checked)
                     {
                         // Calcular o Centro 
@@ -163,7 +162,7 @@ namespace EditorGrafico
                 {
                     MessageBox.Show("O valor informado deve ser um número");
                 }
-            }            
+            }
         }
 
         private void btnTranslacao_Click(object sender, EventArgs e)
@@ -232,44 +231,125 @@ namespace EditorGrafico
             }
         }
 
-        private void FloodFill(int x, int y)
+        private void btnPreencherPoligono_Click(object sender, EventArgs e)
         {
-            try
+            int pos = PoligonoSelecionado();
+            if (pos != -1 && !comboBox.SelectedIndex.Equals(-1))
             {
-                Color color = _imagem.GetPixel(x, y);
-                string nameColor = color.Name;
-                bool temp = _imagem.GetPixel(x, y).Name == "0";
-                if (temp)
-                {
-                    _imagem.SetPixel(x, y, Color.Blue);
-                    //pontosColoridos.Add(new Ponto(x, y));
-                    FloodFill(x + 1, y);
-                    FloodFill(x, y + 1);
-                    FloodFill(x - 1, y);
-                    FloodFill(x, y - 1);
-                }
+                Poligono poligono = listaPoligonos[pos];
+
+                poligono.NomeCor = comboBox.Text;
+                //poligono.FloodFill(_imagem);
+
+                poligono.Rasterizacao(pictureBoxPoligono.Height, _imagem);
+
+                CarregarTela();
             }
-            catch 
-            {
-                MessageBox.Show("Estouro de Pilha");
-            }   
-            
-            
         }
 
-        private void btnPreencherPoligono_Click(object sender, EventArgs e)
+        private void btnCisalhamento_Click(object sender, EventArgs e)
         {
             int pos = PoligonoSelecionado();
             if (pos != -1)
             {
                 Poligono poligono = listaPoligonos[pos];
-                double[] pontoXY = poligono.Centroide();
-                FloodFill((int)pontoXY[0], (int)pontoXY[1]);
-                //foreach (var ponto in pontosColoridos)
-                //{
-                //    _imagem.SetPixel(ponto.X, ponto.Y, Color.Blue);
-                //}
-                
+                try
+                {
+                    double eixoX, eixoY;
+                    eixoX = Convert.ToDouble(tbCesilhamentoX.Text);
+                    eixoY = Convert.ToDouble(tbCesilhamentoY.Text);
+
+                    if (rbCentro.Checked)
+                    {
+                        // Calcular o Centro 
+                        //eixoX = 0;
+                        //eixoY = 0;
+                        //int[] centroide = poligono.Centroide();
+                        //poligono.Translacao(-centroide[0], -centroide[1]);
+                        //poligono.Rotacao(rotacao);
+                        //poligono.Translacao(centroide[0], centroide[1]);
+
+
+                        poligono.CisalhamentoCentro(eixoX, eixoY);
+
+                    }
+                    else if (rbOrigem.Checked)
+                    {
+                        //poligono.Rotacao(rotacao);
+                        poligono.Cisalhamento(eixoX, eixoY);
+
+                    }
+                    else if (rbCoordenada.Checked)
+                    {
+                        eixoX = Convert.ToInt32(txCordX.Text);
+                        eixoY = Convert.ToInt32(txCordY.Text);
+                        poligono.CisalhamentoCentro(eixoX, eixoY);
+                    }
+                    CarregarTela();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("O valor informado deve ser um número");
+                }
+            }
+
+
+
+
+
+
+            //int pos = PoligonoSelecionado();
+            //if (pos != -1)
+            //{
+            //    Poligono poligono = listaPoligonos[pos];
+            //    try
+            //    {
+            //        double eixoX, eixoY;
+            //        eixoX = Convert.ToDouble(tbCesilhamentoX.Text);
+            //        eixoY = Convert.ToDouble(tbCesilhamentoY.Text);
+
+            //        poligono.Cisalhamento(eixoX, eixoY);
+
+            //        CarregarTela();
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        MessageBox.Show("O valor informado deve ser um número real");
+            //    }
+            //}
+        }
+
+        private void btnEspalhamentoX_Click(object sender, EventArgs e)
+        {
+
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                Poligono poligono = listaPoligonos[pos];
+                poligono.Espelhamento("X");
+                CarregarTela();
+            }
+        }
+
+        private void btnEspalhamentoY_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                Poligono poligono = listaPoligonos[pos];
+                poligono.Espelhamento("Y");
+                CarregarTela();
+            }
+        }
+
+        private void btnEspalhamentoXY_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                Poligono poligono = listaPoligonos[pos];
+                poligono.Espelhamento("XY");
+                CarregarTela();
             }
         }
     }

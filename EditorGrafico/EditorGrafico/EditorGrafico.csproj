@@ -60,6 +60,8 @@
     </Compile>
     <Compile Include="models\Elipse.cs" />
     <Compile Include="models\Poligono.cs" />
+    <Compile Include="models\rasterizacao\EdgeTable.cs" />
+    <Compile Include="models\rasterizacao\ItemEdgeTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="models\Circunferencia.cs" />

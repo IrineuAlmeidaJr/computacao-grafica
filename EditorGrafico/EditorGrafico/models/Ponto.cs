@@ -68,7 +68,7 @@ namespace EditorGrafico.utils
                 {
                     if ((int)x > 0 && (int)x < w && (int)y > 0 && (int)y < h)
                     {
-                        imagem.SetPixel((int)x, (int)y, Color.Red);
+                        imagem.SetPixel((int)x, (int)y, Color.Black);
                     }
                     if (d <= 0)
                     {
@@ -104,7 +104,7 @@ namespace EditorGrafico.utils
                 {
                     if ((int)x > 0 && (int)x < w && (int)y > 0 && (int)y < h)
                     {
-                        imagem.SetPixel((int)x, (int)y, Color.Red);
+                        imagem.SetPixel((int)x, (int)y, Color.Black);
                     }
                     if (d <= 0)
                     {
