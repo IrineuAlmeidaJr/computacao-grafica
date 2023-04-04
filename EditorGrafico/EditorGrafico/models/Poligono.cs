@@ -131,13 +131,13 @@ namespace EditorGrafico.models
         {
             double cX, cY;
             cX = cY = 0;
-            foreach (var ponto in PontosOriginais)
+            foreach (var ponto in Pontos)
             {
                 cX += ponto.X;
                 cY += ponto.Y;
             }
-            cX /= PontosOriginais.Count;
-            cY /= PontosOriginais.Count;
+            cX /= Pontos.Count;
+            cY /= Pontos.Count;
 
             return new double[2] { cX , cY };
         }
