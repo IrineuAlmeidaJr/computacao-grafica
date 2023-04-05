@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EditorGrafico.models.rasterizacao
 {
@@ -25,44 +26,44 @@ namespace EditorGrafico.models.rasterizacao
         public void Inicializar(List<Ponto> pontos)
         {
             double Ymax, Ymin, Xmin, IncX;
-            Ponto atual, prox;
+            Ponto cx1, cx2;
             for (int i = 0; i < pontos.Count - 1; i++)
             {
-                atual = pontos[i];
-                prox = pontos[i + 1];
-                if (atual.Y > prox.Y)
+                cx1 = pontos[i];
+                cx2 = pontos[i + 1];
+                if (cx1.Y > cx2.Y)
                 {
-                    Ymax = atual.Y;
-                    Xmin = prox.X;
-                    Ymin = prox.Y;
-                    IncX = (atual.X - prox.X) / (atual.Y - prox.Y);
+                    Ymax = cx1.Y;
+                    Xmin = cx2.X;
+                    Ymin = cx2.Y;
+                    IncX = (double)(cx1.X - cx2.X) / (cx1.Y - cx2.Y);
                 }
                 else
                 {
-                    Ymax = prox.Y;
-                    Xmin = atual.X;
-                    Ymin = atual.Y;
-                    IncX = (prox.X - atual.X) / (prox.Y - atual.Y);
+                    Ymax = cx2.Y;
+                    Xmin = cx1.X;
+                    Ymin = cx1.Y;
+                    IncX = (double)(cx2.X - cx1.X) / (cx2.Y - cx1.Y);
                 }
 
                 Adicionar((int)Ymin, Ymax, Xmin, IncX);
             }
 
-            atual = pontos[0];
-            prox = pontos[pontos.Count-1];
-            if (atual.Y > prox.Y)
+            cx1 = pontos[0];
+            cx2 = pontos[pontos.Count-1];
+            if (cx1.Y > cx2.Y)
             {
-                Ymax = atual.Y;
-                Xmin = prox.X;
-                Ymin = prox.Y;
-                IncX = (atual.X - prox.X) / (atual.Y - prox.Y);
+                Ymax = cx1.Y;
+                Xmin = cx2.X;
+                Ymin = cx2.Y;
+                IncX = (double)(cx1.X - cx2.X) / (cx1.Y - cx2.Y);
             }
             else
             {
-                Ymax = prox.Y;
-                Xmin = atual.X;
-                Ymin = atual.Y;
-                IncX = (prox.X - atual.X) / (prox.Y - atual.Y);
+                Ymax = cx2.Y;
+                Xmin = cx1.X;
+                Ymin = cx1.Y;
+                IncX = (double)(cx2.X - cx1.X) / (cx2.Y - cx1.Y);
             }
 
             Adicionar((int)Ymin, Ymax, Xmin, IncX);
@@ -73,18 +74,18 @@ namespace EditorGrafico.models.rasterizacao
             ET[Y].Add(new ItemEdgeTable(Ymax, Xmin, IncX));
         }
 
-        public void Preencher(Bitmap imagem, Color cor)
+        public void Preencher(Bitmap imagem, Color cor, PictureBox pictureBox)
         {
             List<ItemEdgeTable> AET = new List<ItemEdgeTable>();
             for (int y = 0; y < ET.Length; y++)
             {
-                if (ET[y].Count > 0)
+                // Adiciona a AET
+                foreach (var item in ET[y])
                 {
-                    foreach (var item in ET[y])
-                    {
-                        AET.Add(new ItemEdgeTable(item.Ymax, item.Xmin, item.IncX));
-                    }
-
+                    AET.Add(new ItemEdgeTable(item.Ymax, item.Xmin, item.IncX));
+                }
+                if (AET.Count > 0)
+                {                
                     // Retirar Ymax == Y
                     for (int pos = 0; pos < AET.Count; pos++)
                     {
@@ -93,17 +94,19 @@ namespace EditorGrafico.models.rasterizacao
                             AET.RemoveAt(pos);
                         }
                     }
-                    // Ordenar pelo Xmin
-                    if (ET[y].Count > 0)
-                    {
-                        AET.Sort((Cx1, Cx2) => Cx1.Xmin.CompareTo(Cx2.Xmin));
-                    }
+                    // Ordenar pelo Xmin                    
+                    AET.Sort((Cx1, Cx2) => Cx1.Xmin.CompareTo(Cx2.Xmin));
                     // Desenha se tive ao menor 2 caixas
-                    for (int pos = 0; pos < AET.Count - 1; pos++)
+                    for (int pos = 0; pos < AET.Count - 1; pos+=2)
                     {
                         for (int x = (int)AET[pos].Xmin; x < (int)AET[pos + 1].Xmin; x++)
                         {
-                            imagem.SetPixel(x, y, cor);
+                            // TIRA ISSO DEPOIS COLOQUEI PQ TAVA DANDO BUG
+                            if (x > 0 && x < pictureBox.Width &&
+                            y > 0 && y < pictureBox.Height)
+                            {
+                                imagem.SetPixel(x, y, cor);
+                            }
                         }
                     }
                     // Incrementar o Xmin
@@ -111,7 +114,6 @@ namespace EditorGrafico.models.rasterizacao
                     {
                         item.Incrementa();
                     }
-
                 }
             }
         }

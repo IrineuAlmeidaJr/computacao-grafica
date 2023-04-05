@@ -33,7 +33,7 @@ namespace EditorGrafico.models
             }
         }
 
-        public void DesenharPoligono(Bitmap imagem, PictureBox pictureBoxPoligono)
+        public void DesenharPoligono(Bitmap imagem, PictureBox pictureBox)
         {
             if (this.Pontos.Count > 1)
             {
@@ -48,58 +48,60 @@ namespace EditorGrafico.models
 
                 if (_colorido)
                 {
-                    FloodFill(imagem);
-                    //Rasterizacao(pictureBoxPoligono.Width, imagem);
+                    //FloodFill(imagem, pictureBox);
+                    Rasterizacao(pictureBox, imagem);
                 }
                             
 
-                pictureBoxPoligono.Image = imagem;
+                pictureBox.Image = imagem;
             }
 
         }
 
-        public void FloodFill(Bitmap imagem)
+        public void FloodFill(Bitmap imagem, PictureBox pictureBox)
         {
-            try
+            Color corPreenchimento;
+            switch (NomeCor)
             {
-                Color corPreenchimento;
-                switch (NomeCor)
+                case "Vermelho":
+                    corPreenchimento = Color.Red; 
+                    break;
+                case "Azul":
+                    corPreenchimento = Color.Blue;
+                    break;
+                case "Verde":
+                    corPreenchimento = Color.Green;
+                    break;
+                case "Amarelo":
+                    corPreenchimento = Color.Yellow;
+                    break;
+                case "Roxo":
+                    corPreenchimento = Color.Purple;
+                    break;
+                default:
+                    corPreenchimento = Color.Red;
+                    break;
+            }
+
+
+            double[] centroide = Centroide();
+
+            Ponto ponto = null;
+            Stack<Ponto> stack = new Stack<Ponto>();
+            stack.Push(new Ponto((int)centroide[0], (int)centroide[1]));
+            while (stack.Count > 0)
+            {
+                ponto = stack.Pop();
+                if (ponto.X > 0 && ponto.X < pictureBox.Width &&
+                            ponto.Y > 0 && ponto.Y < pictureBox.Height)
                 {
-                    case "Vermelho":
-                        corPreenchimento = Color.Red; 
-                        break;
-                    case "Azul":
-                        corPreenchimento = Color.Blue;
-                        break;
-                    case "Verde":
-                        corPreenchimento = Color.Green;
-                        break;
-                    case "Amarelo":
-                        corPreenchimento = Color.Yellow;
-                        break;
-                    case "Roxo":
-                        corPreenchimento = Color.Purple;
-                        break;
-                    default:
-                        corPreenchimento = Color.Red;
-                        break;
-                }
-
-
-                double[] centroide = Centroide();
-
-                Ponto ponto = null;
-                Stack<Ponto> stack = new Stack<Ponto>();
-                stack.Push(new Ponto((int)centroide[0], (int)centroide[1]));
-                while (stack.Count > 0)
-                {
-                    ponto = stack.Pop();
                     Color color = imagem.GetPixel(ponto.X, ponto.Y);
-                    string nameColor = color.Name;
-                    bool temp = nameColor == "0";
-                    if (temp)
+                    if (color.Name == "0")
                     {
+
                         imagem.SetPixel(ponto.X, ponto.Y, corPreenchimento);
+
+
 
                         //FloodFill(x + 1, y);
                         stack.Push(new Ponto(ponto.X + 1, ponto.Y));
@@ -115,15 +117,9 @@ namespace EditorGrafico.models
 
                     }
                 }
-
-                _colorido = true;
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao Pintar !!!");
-                _colorido = false;
             }
 
+            _colorido = true;
 
         }
 
@@ -673,11 +669,11 @@ namespace EditorGrafico.models
 
         }
 
-        public void Rasterizacao(int maxY, Bitmap imagem)
+        public void Rasterizacao(PictureBox pictureBox, Bitmap imagem)
         {
-            try
-            {
-                EdgeTable lista = new EdgeTable(maxY);
+            //try
+            //{
+                EdgeTable lista = new EdgeTable(pictureBox.Height);
                 lista.Inicializar(Pontos);
 
                 Color corPreenchimento;
@@ -703,15 +699,15 @@ namespace EditorGrafico.models
                         break;
                 }
 
-                lista.Preencher(imagem, corPreenchimento);
+                lista.Preencher(imagem, corPreenchimento, pictureBox);
 
                 _colorido = true;
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao Pintar !!!");
-                _colorido = false;
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Erro ao Pintar !!!");
+            //    _colorido = false;
+            //}
 
 
            

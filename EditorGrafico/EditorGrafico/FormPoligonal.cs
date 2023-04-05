@@ -19,8 +19,6 @@ namespace EditorGrafico
         private List<Ponto> pontosPoligono;
         private List<Poligono> listaPoligonos;
 
-        private List<Ponto> pontosColoridos;
-
         private Bitmap _imagem;
 
         public FormPoligonal()
@@ -31,7 +29,6 @@ namespace EditorGrafico
             this.numPoligono = 1;
             this.pontosPoligono = new List<Ponto>();
             this.listaPoligonos = new List<Poligono>();
-            this.pontosColoridos = new List<Ponto>();
 
 
             CarregarTela();
@@ -52,6 +49,22 @@ namespace EditorGrafico
             }
         }
 
+        private void btnPreencherPoligono_Click(object sender, EventArgs e)
+        {
+            int pos = PoligonoSelecionado();
+            if (pos != -1 && !comboBox.SelectedIndex.Equals(-1))
+            {
+                Poligono poligono = listaPoligonos[pos];
+
+                poligono.NomeCor = comboBox.Text;
+                //poligono.FloodFill(_imagem, pictureBoxPoligono);
+                poligono.Rasterizacao(pictureBoxPoligono, _imagem);
+
+                CarregarTela();
+            }
+        }
+
+
         private int PoligonoSelecionado()
         {
             int pos = 0;
@@ -61,7 +74,7 @@ namespace EditorGrafico
             }
 
             if (pos < listBox.Items.Count)
-            {
+            {        
                 return pos;
             }
 
@@ -230,23 +243,7 @@ namespace EditorGrafico
                 }
             }
         }
-
-        private void btnPreencherPoligono_Click(object sender, EventArgs e)
-        {
-            int pos = PoligonoSelecionado();
-            if (pos != -1 && !comboBox.SelectedIndex.Equals(-1))
-            {
-                Poligono poligono = listaPoligonos[pos];
-
-                poligono.NomeCor = comboBox.Text;
-                poligono.FloodFill(_imagem);
-
-                //poligono.Rasterizacao(pictureBoxPoligono.Height, _imagem);
-
-                CarregarTela();
-            }
-        }
-
+                
         private void btnCisalhamento_Click(object sender, EventArgs e)
         {
             int pos = PoligonoSelecionado();
@@ -394,6 +391,22 @@ namespace EditorGrafico
 
 
                 CarregarTela();
+            }
+        }
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show("ENTROU");
+            int pos = PoligonoSelecionado();
+            if (pos != -1)
+            {
+                Poligono poligono = listaPoligonos[pos];
+                listaPontoPoligonos.Items.Clear();
+                var pontos = poligono.Pontos;
+                for (int i = 0; i < pontos.Count; i++)
+                {
+                    listaPontoPoligonos.Items.Add($"X{i + 1}={pontos[i].X}; Y{i + 1}={pontos[i].Y}");
+                }
             }
         }
     }
