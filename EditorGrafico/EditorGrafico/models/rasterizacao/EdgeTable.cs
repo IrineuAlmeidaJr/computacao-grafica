@@ -87,7 +87,7 @@ namespace EditorGrafico.models.rasterizacao
                 if (AET.Count > 0)
                 {                
                     // Retirar Ymax == Y
-                    for (int pos = 0; pos < AET.Count; pos++)
+                    for (int pos = AET.Count-1; pos >= 0 ; pos--)
                     {
                         if (AET[pos].Ymax == y)
                         {

@@ -17,6 +17,7 @@ namespace EditorGrafico.models
         public double[,] MatrizAcumulada { get; set; }
         private bool _colorido;
         public string NomeCor { get; set; }
+        public int Preenchimento { get; set; }
 
 
         public Poligono(List<Ponto> pontos)
@@ -25,6 +26,7 @@ namespace EditorGrafico.models
             NomeCor = string.Empty;
             Pontos = new List<Ponto>(pontos);
             PontosOriginais = new List<Ponto>(pontos);
+            Preenchimento = 0;
             this.MatrizAcumulada = new double[3,3];
             // Matriz Identidade
             for (int i = 0; i < 3; i++)
@@ -48,8 +50,14 @@ namespace EditorGrafico.models
 
                 if (_colorido)
                 {
-                    //FloodFill(imagem, pictureBox);
-                    Rasterizacao(pictureBox, imagem);
+                    if (Preenchimento == 0)
+                    {
+                        FloodFill(imagem, pictureBox);
+                    }
+                    else
+                    {
+                        Rasterizacao(pictureBox, imagem);
+                    }                    
                 }
                             
 

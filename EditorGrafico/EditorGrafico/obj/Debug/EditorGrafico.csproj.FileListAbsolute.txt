@@ -58,3 +58,15 @@ E:\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.GenerateResource.c
 E:\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.CoreCompileInputs.cache
 E:\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.exe
 E:\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.pdb
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\bin\Debug\EditorGrafico.exe.config
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\bin\Debug\EditorGrafico.exe
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\bin\Debug\EditorGrafico.pdb
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.AssemblyReference.cache
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.SuggestedBindingRedirects.cache
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.FormPoligonal.resources
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.FormPrincipal.resources
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.Properties.Resources.resources
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.GenerateResource.cache
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.csproj.CoreCompileInputs.cache
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.exe
+D:\1017\computação gráfica\computacao-grafica\EditorGrafico\EditorGrafico\obj\Debug\EditorGrafico.pdb

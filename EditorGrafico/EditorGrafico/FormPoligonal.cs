@@ -30,7 +30,6 @@ namespace EditorGrafico
             this.pontosPoligono = new List<Ponto>();
             this.listaPoligonos = new List<Poligono>();
 
-
             CarregarTela();
         }
 
@@ -55,10 +54,20 @@ namespace EditorGrafico
             if (pos != -1 && !comboBox.SelectedIndex.Equals(-1))
             {
                 Poligono poligono = listaPoligonos[pos];
-
                 poligono.NomeCor = comboBox.Text;
-                //poligono.FloodFill(_imagem, pictureBoxPoligono);
-                poligono.Rasterizacao(pictureBoxPoligono, _imagem);
+                if (radioButtonFF.Checked)
+                {                    
+                    poligono.Preenchimento = 0;
+                    poligono.FloodFill(_imagem, pictureBoxPoligono);
+
+                }
+                if (radioButtonSL.Checked)
+                {
+                    poligono.Preenchimento = 1;
+                    poligono.Rasterizacao(pictureBoxPoligono, _imagem);
+                }
+
+               
 
                 CarregarTela();
             }

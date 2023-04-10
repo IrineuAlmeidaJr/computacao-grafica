@@ -78,6 +78,11 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonFF = new System.Windows.Forms.RadioButton();
+            this.radioButtonSL = new System.Windows.Forms.RadioButton();
+            this.FF = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoligono)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -95,6 +100,7 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -178,6 +184,7 @@
             this.tableLayoutPanel4.Controls.Add(this.listBox, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.listaPontoPoligonos, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel17, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 41);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -761,6 +768,69 @@
             this.label8.Text = "clique com botao esquerdo do mouse e arraste para adicionar os pontos. Para termi" +
     "nar cloque botao direito do mouse.";
             // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.ColumnCount = 2;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.61856F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.38145F));
+            this.tableLayoutPanel17.Controls.Add(this.radioButtonFF, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.radioButtonSL, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.FF, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.label10, 1, 1);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(182, 99);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 2;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(97, 71);
+            this.tableLayoutPanel17.TabIndex = 3;
+            // 
+            // radioButtonFF
+            // 
+            this.radioButtonFF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonFF.AutoSize = true;
+            this.radioButtonFF.Location = new System.Drawing.Point(3, 9);
+            this.radioButtonFF.Name = "radioButtonFF";
+            this.radioButtonFF.Size = new System.Drawing.Size(14, 17);
+            this.radioButtonFF.TabIndex = 0;
+            this.radioButtonFF.TabStop = true;
+            this.radioButtonFF.Text = "radioButton1";
+            this.radioButtonFF.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSL
+            // 
+            this.radioButtonSL.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioButtonSL.AutoSize = true;
+            this.radioButtonSL.Location = new System.Drawing.Point(3, 44);
+            this.radioButtonSL.Name = "radioButtonSL";
+            this.radioButtonSL.Size = new System.Drawing.Size(14, 17);
+            this.radioButtonSL.TabIndex = 1;
+            this.radioButtonSL.TabStop = true;
+            this.radioButtonSL.Text = "radioButton2";
+            this.radioButtonSL.UseVisualStyleBackColor = true;
+            // 
+            // FF
+            // 
+            this.FF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FF.AutoSize = true;
+            this.FF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FF.Location = new System.Drawing.Point(27, 9);
+            this.FF.Name = "FF";
+            this.FF.Size = new System.Drawing.Size(62, 16);
+            this.FF.TabIndex = 2;
+            this.FF.Text = "Flood Fill";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(25, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 16);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Scan Line";
+            // 
             // FormPoligonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,6 +869,8 @@
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -855,5 +927,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.ListBox listaPontoPoligonos;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private System.Windows.Forms.RadioButton radioButtonFF;
+        private System.Windows.Forms.RadioButton radioButtonSL;
+        private System.Windows.Forms.Label FF;
+        private System.Windows.Forms.Label label10;
     }
 }
