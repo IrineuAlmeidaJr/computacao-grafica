@@ -20,7 +20,11 @@ namespace EditorGrafico
         public FormPrincipal()
         {
             InitializeComponent();
+            int w = pictureBox.Height;
+            int h = pictureBox.Width;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            _imagem =
+              new Bitmap(h, w, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
 
             CarregarTela();
         }
